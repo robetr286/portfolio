@@ -3,6 +3,9 @@ site_author: Robert Bąk
 site_description: >-
     Portfolio moich projektów z Data Science i AI!
 
+repo_name: robetr286/portfolio
+repo_url: https://github.com/robetr286/portfolio
+
 theme:
   name: material
   palette:
