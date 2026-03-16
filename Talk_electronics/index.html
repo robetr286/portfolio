@@ -933,9 +933,9 @@
 <hr />
 <h2 id="czym-jest-talk-electronics">Czym jest Talk Electronics?</h2>
 <p><strong>Talk Electronics</strong> to webowa aplikacja do automatycznej analizy schematów elektronicznych. Zamienia skany PDF i zdjęcia obwodów drukowanych w dane maszynowe: wykrywa komponenty, odczytuje ich wartości, generuje netlistę i prowadzi użytkownika przez diagnostykę — jak rozmowa z doświadczonym serwisantem.</p>
-<p>Projekt rozwijam od kilku miesięcy jako główny twórca kodu (we współpracy z AI), łącząc Python/Flask backend, modele deep learning (RT-DETR, PaddleOCR) i interaktywny frontend z Canvas API.</p>
+<p>Projekt rozwijam od września 2025 jako product manager,data scientist ,qa tester,prompt engineer (testując różne modele AI przy pisaniu kodu), łącząc Python/Flask backend, modele deep learning (RT-DETR, PaddleOCR) i interaktywny frontend z Canvas API.</p>
 <p><img alt="Widok główny aplikacji" src="img/screenshot_01.png" />
-<em>Interfejs główny — upload schematu PDF, nawigacja między stronami, podgląd z zoomem 10–600%</em></p>
+<em>Interfejs główny — automatyczny retusz schematu, nawigacja między zakładkami, wybór filtrów do retuszu</em></p>
 <hr />
 <h2 id="co-potrafi-aplikacja">Co potrafi aplikacja?</h2>
 <h3 id="detekcja-symboli-elektronicznych-ai">🔍 Detekcja symboli elektronicznych (AI)</h3>
@@ -947,7 +947,9 @@
 <li>Obsługa wielu źródeł: strona PDF, plik graficzny, data-URL</li>
 </ul>
 <p><img alt="Detekcja symboli" src="img/screenshot_02.png" />
-<em>Automatyczna detekcja symboli — bounding boxy nałożone na schemat z tabelą wyników</em></p>
+<em>Paleta narzędzi retuszu</em></p>
+<p><img alt="screenshot_05" src="img/screenshot_05.png" />
+<em>screenshot_05</em></p>
 <h3 id="ocr-odczyt-tekstu-ze-schematow">📝 OCR — odczyt tekstu ze schematów</h3>
 <p>Moduł OCR oparty o <strong>PaddleOCR PP-OCRv4</strong> odczytuje tekst ze schematu z precyzją pikselową:</p>
 <ul>
@@ -967,7 +969,9 @@
 <li><strong>Undo/Redo</strong> — pełna historia operacji</li>
 </ul>
 <p><img alt="Edycja schematu" src="img/screenshot_03.png" />
-<em>Moduł edycji — kadrowanie, binaryzacja i retusz przygotowują obraz do analizy AI</em></p>
+<em>Zakładka [Strefy ignorowane]</em></p>
+<p><img alt="screenshot_06" src="img/screenshot_06.png" />
+<em>screenshot_06</em></p>
 <h3 id="generowanie-netlisty-i-eksport-spice">🔗 Generowanie netlisty i eksport SPICE</h3>
 <p>Na podstawie wykrytych symboli i segmentacji linii aplikacja buduje graf połączeń:</p>
 <ul>
@@ -987,7 +991,7 @@
 <hr />
 <h2 id="stos-technologiczny">Stos technologiczny</h2>
 <p><img alt="Architektura" src="img/screenshot_04.png" />
-<em>Widok panelu diagnostyki i struktury aplikacji</em></p>
+<em>Zakładka modelu OCR i korekcji</em></p>
 <h3 id="backend">Backend</h3>
 <table>
 <thead>
@@ -1178,17 +1182,17 @@
 <tr>
 <td><strong>Faza I</strong></td>
 <td>Pełna integracja OCR + RT-DETR + netlista</td>
-<td>Marzec 2026</td>
+<td>Kwiecień 2026</td>
 </tr>
 <tr>
 <td><strong>Faza II</strong></td>
 <td>Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI</td>
-<td>Kwiecień 2026</td>
+<td>Czerwiec 2026</td>
 </tr>
 <tr>
 <td><strong>Faza III</strong></td>
 <td>Deploy produkcyjny na DigitalOcean + testy na trudnych schematach</td>
-<td>Maj 2026</td>
+<td>Sierpień 2026</td>
 </tr>
 </tbody>
 </table>
@@ -1223,7 +1227,7 @@ Unit + E2E (Playwright) z CI/CD na GitHub Actions.
 KiCad → COCO → YOLO z augmentacjami — tysiące schematów treningowych.
 
 **🤖 Duet człowiek + AI**<br>
-Unikalna metodyka: PM dostarcza domenową wiedzę, AI implementuje i testuje — szybkie iteracje.
+Unikalna metodyka: PM dostarcza domenową wiedzę, AI implementuje — szybkie iteracje.
 
 </div>
 </div>
