@@ -2,16 +2,16 @@
 # Talk Electronics — AI-Powered Schematic Analysis
 
 <p style="text-align: center; font-size: 1.2em; color: #888;">
-<em>Od skanu schematu do pełnej diagnostyki — w jednej aplikacji</em>
+<em>Od skanu schematu do diagnostyki i netlisty — end-to-end produkt AI dla elektroniki</em>
 </p>
 
 ---
 
 ## Czym jest Talk Electronics?
 
-**Talk Electronics** to webowa aplikacja do automatycznej analizy schematów elektronicznych. Zamienia skany PDF i zdjęcia obwodów drukowanych w dane maszynowe: wykrywa komponenty, odczytuje ich wartości, generuje netlistę i prowadzi użytkownika przez diagnostykę — jak rozmowa z doświadczonym serwisantem.
+**Talk Electronics** to rozwijana przeze mnie aplikacja AI do automatycznej analizy schematów elektronicznych. System przekształca skany PDF i zdjęcia obwodów w dane maszynowe: wykrywa komponenty, odczytuje ich oznaczenia i wartości, buduje netlistę oraz wspiera diagnostykę krok po kroku.
 
-Projekt rozwijam od września 2025 jako product manager, data scientist , qa tester, prompt engineer (testując różne modele AI przy pisaniu kodu), łącząc Python/Flask backend, modele deep learning (RT-DETR, PaddleOCR) i interaktywny frontend z Canvas API.
+Projekt rozwijam od września 2025 w szerokiej roli łączącej product thinking, data science, QA i praktyczne wykorzystanie narzędzi AI do przyspieszania developmentu. Odpowiadam zarówno za kierunek produktu, jak i za decyzje techniczne dotyczące pipeline'u OCR, detekcji obiektów, jakości danych oraz doświadczenia użytkownika.
 
 ![Widok główny aplikacji](img/screenshot_01.png)
 *Interfejs główny — automatyczny retusz schematu, nawigacja między zakładkami, wybór filtrów do retuszu*
@@ -22,7 +22,7 @@ Projekt rozwijam od września 2025 jako product manager, data scientist , qa tes
 
 ### 🔍 Detekcja symboli elektronicznych (AI)
 
-Serce aplikacji stanowi detektor oparty o **RT-DETR-L** (Real-Time Detection Transformer) — model transformer, który rozpoznaje komponenty elektroniczne na schemacie: rezystory, kondensatory, tranzystory, układy scalone, cewki, diody.
+Sercem aplikacji jest detektor oparty o **RT-DETR-L** (Real-Time Detection Transformer), rozpoznający komponenty elektroniczne na schemacie: rezystory, kondensatory, tranzystory, układy scalone, cewki i diody.
 
 - Wizualizacja bounding boxów bezpośrednio na schemacie
 - Tabela wyników z etykietą, pewnością i współrzędnymi
@@ -32,21 +32,23 @@ Serce aplikacji stanowi detektor oparty o **RT-DETR-L** (Real-Time Detection Tra
 ![Detekcja symboli](img/screenshot_02.png)
 *Paleta narzędzi retuszu*
 
-![Wykrywanie obiektów](img/screenshot_05.png)
-*Wykrywanie obiektów*
-
 ### 📝 OCR — odczyt tekstu ze schematów
 
-Moduł OCR oparty o **PaddleOCR PP-OCRv4** odczytuje tekst ze schematu z precyzją pikselową:
+Moduł OCR oparty o **PaddleOCR PP-OCRv4** odczytuje tekst ze schematu z precyzją pikselową i stanowi kluczowy element przejścia od obrazu do danych strukturalnych:
 
 - **Kategoryzacja** — automatyczne rozpoznawanie typu tokena: komponent (R1, Q410), wartość (33K, 2SC1740), etykieta sieci (VCC, GND), inne
 - **Smart pairing** — inteligentne parowanie komponentów z ich wartościami (Q410 → 2SC1740, R436 → 100K) z uwzględnieniem semantyki (tranzystory parują z modelami półprzewodników)
 - **Postprocessing** — 16-etapowy pipeline czyszczenia tokenów: korekcja OCR (1O0K→100K), scalanie fragmentów pionowych, usuwanie szumu, naprawa oznaczeń półprzewodników (2SCI740→2SC1740)
 - **Klikalne bounding boxy** — każdy rozpoznany tekst jest interaktywny na Canvasie
 
+
+![Wykrywanie obiektów](img/screenshot_05.png)
+*Wykrywanie obiektów*
+
+
 ### ✏️ Zaawansowany edytor graficzny
 
-Kompleksowy moduł przygotowania obrazu, bo schematy z rzeczywistości bywają zniszczone, przekrzywione i zaszumione:
+Kompleksowy moduł przygotowania obrazu zaprojektowany pod realne schematy: zniszczone, przekrzywione, zaszumione lub sfotografowane w trudnych warunkach.
 
 - **Kadrowanie** — prostokątne i wielokątne (polygon)
 - **Prostowanie** — automatyczny deskew + ręczny suwak kąta
@@ -58,21 +60,23 @@ Kompleksowy moduł przygotowania obrazu, bo schematy z rzeczywistości bywają z
 ![Edycja schematu](img/screenshot_03.png)
 *Zakładka [Strefy ignorowane]*
 
-![screenshot_06](img/screenshot_06.png)
-*wykrywanie linii*
-
 ### 🔗 Generowanie netlisty i eksport SPICE
 
-Na podstawie wykrytych symboli i segmentacji linii aplikacja buduje graf połączeń:
+Na podstawie wykrytych symboli i segmentacji linii aplikacja buduje graf połączeń, który prowadzi do wygenerowania netlisty gotowej do dalszej analizy:
 
 - Automatyczna ekstrakcja linii (szkieletyzacja) i węzłów
 - Generowanie netlisty z grafem krawędzi i cyklami
 - **Edge Connectors** — łączenie wielostronicowych schematów z formularzem konektorów
 - **Eksport do SPICE** (.cir) — gotowy deck do symulacji obwodu
 
+
+![screenshot_06](img/screenshot_06.png)
+*wykrywanie linii*
+
+
 ### 💬 Diagnostyczny chat AI
 
-Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
+Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla warstwy diagnostycznej AI:
 
 - Sugestie pomiarów (napięcie, rezystancja, spadek)
 - Flagowanie podejrzanych węzłów i anomalii
@@ -84,9 +88,11 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 ![Architektura](img/screenshot_04.png)
 *Zakładka modelu OCR i korekcji*
 
-## Stos technologiczny
+## 🧰 Stos technologiczny
 
-### Backend
+Stack został dobrany pod realne wymagania produktu CV/AI: przetwarzanie dokumentów, obsługę nietypowych danych wejściowych, iteracyjny rozwój modeli oraz możliwość przyszłego wdrożenia produkcyjnego.
+
+### 🖥️ Backend
 
 | Technologia | Zastosowanie |
 |---|---|
@@ -94,7 +100,7 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 | **Flask** | Framework webowy (factory pattern + Blueprints) |
 | **REST API** | Komunikacja frontend-backend (JSON) |
 
-### AI / Machine Learning
+### 🤖 AI / Machine Learning
 
 | Model / Biblioteka | Zastosowanie |
 |---|---|
@@ -103,7 +109,7 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 | **PyTorch** | Framework deep learning |
 | **PaddlePaddle 3.3** | Framework dla OCR |
 
-### Przetwarzanie obrazów
+### 🖼️ Przetwarzanie obrazów
 
 | Biblioteka | Zastosowanie |
 |---|---|
@@ -112,7 +118,7 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 | **Pillow** | Manipulacja obrazami, maski |
 | **NumPy** | Operacje macierzowe |
 
-### Frontend
+### 🎛️ Frontend
 
 | Technologia | Zastosowanie |
 |---|---|
@@ -121,7 +127,7 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 | **Bootstrap 5.3** | Responsywny layout |
 | **HTML/CSS** | Interfejs użytkownika |
 
-### Testy i jakość kodu
+### ✅ Testy i jakość kodu
 
 | Narzędzie | Zastosowanie |
 |---|---|
@@ -130,7 +136,7 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 | **GitHub Actions** | CI/CD z automated checks |
 | **Pre-commit hooks** | isort, flake8, YAML validation |
 
-### Infrastruktura
+### 🏗️ Infrastruktura
 
 | Technologia | Zastosowanie |
 |---|---|
@@ -141,30 +147,30 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla OpenAI API:
 
 ---
 
-## Pipeline danych syntetycznych
+## 🧪 Pipeline danych syntetycznych
 
-Jednym z unikalnych elementów projektu jest **pipeline generowania danych treningowych**:
+Jednym z mocniejszych elementów projektu jest **pipeline generowania danych treningowych**, który ogranicza zależność od ręcznie anotowanych zbiorów i przyspiesza eksperymenty modelowe:
 
 1. **KiCad API** → automatycznie generowane schematy elektroniczne
 2. **Eksport** → PDF/PNG w 300 DPI z anotacjami COCO
 3. **Augmentacje** — albumentations: szum, blur, rotacja, dropout (profile: light/scan/heavy)
 4. **Konwersja** → COCO → format YOLO z automatycznym splitem train/val/test
 
-Dzięki temu model uczy się nie tylko na ręcznie zanotowanych danych, ale na tysiącach automatycznie wygenerowanych schematów — co dramatycznie przyspiesza iteracje.
+Dzięki temu model uczy się nie tylko na danych ręcznie przygotowanych, ale także na tysiącach automatycznie wygenerowanych schematów. Z perspektywy produktowej i inżynierskiej oznacza to szybsze iteracje, łatwiejsze testowanie hipotez i większą kontrolę nad jakością datasetu.
 
 ---
 
-## Dokąd zmierzamy?
+## 🧭 Dokąd zmierzamy?
 
 ### Wizja
 
-Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i naprawy elektroniki**, które:
+Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i diagnostyki elektroniki**, które:
 
 - Zamienia każdy skan schematu w interaktywny, maszynowo-czytelny dokument
 - Prowadzi użytkownika krok po kroku przez diagnostykę usterki
 - Uczy się na każdej korekcie — im więcej napraw, tym system celniejszy
 
-### Najbliższe cele
+### 🎯 Najbliższe cele
 
 | Faza | Opis | Termin |
 |---|---|---|
@@ -172,7 +178,7 @@ Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i nap
 | **Faza II** | Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI | Czerwiec 2026 |
 | **Faza III** | Deploy produkcyjny na DigitalOcean + testy na trudnych schematach | Sierpień 2026 |
 
-### Długofalowa wizja
+### 🔭 Długofalowa wizja
 
 - **Dialog diagnostyczny** — system sugeruje konkretne pomiary i buduje przebieg diagnozy
 - **Proces naprawy** — wskazania, które elementy wymienić i jak zweryfikować naprawę
@@ -187,25 +193,25 @@ Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i nap
 <div>
 
 **🔄 End-to-End Pipeline**<br>
-Nie tylko detektor — pełna ścieżka od PDF przez analizę do diagnostyki i symulacji SPICE.
+Nie pojedynczy model, lecz pełna ścieżka: od PDF i preprocessingu, przez detekcję i OCR, do netlisty, diagnostyki i eksportu SPICE.
 
 **🏠 Lokalna AI**<br>
-RT-DETR i PaddleOCR działają lokalnie — bez kosztów chmury, z pełną kontrolą nad danymi.
+RT-DETR i PaddleOCR działają lokalnie, co obniża koszty operacyjne i daje pełną kontrolę nad danymi wejściowymi.
 
 **✏️ Interaktywna edycja**<br>
-Canvas editor na każdym etapie — kadrowanie, retusz, deskew, strefy ignorowane.
+Canvas editor wspiera operatora na każdym etapie: kadrowanie, retusz, deskew i definiowanie stref ignorowanych.
 
 </div>
 <div>
 
 **🧪 284+ automatycznych testów**<br>
-Unit + E2E (Playwright) z CI/CD na GitHub Actions.
+Projekt ma pokrycie testami unit i E2E (Playwright) oraz automatyczne kontrole jakości w CI/CD.
 
 **📊 Syntetyczny pipeline danych**<br>
-KiCad → COCO → YOLO z augmentacjami — tysiące schematów treningowych.
+KiCad → COCO → YOLO z augmentacjami daje skalowalny sposób rozwoju datasetu i modeli.
 
 **🤖 Duet człowiek + AI**<br>
-Unikalna metodyka: PM dostarcza domenową wiedzę, AI implementuje — szybkie iteracje.
+Projekt pokazuje praktyczne wykorzystanie narzędzi AI w developmentcie: szybsze iteracje przy zachowaniu kontroli produktowej i technicznej.
 
 </div>
 </div>

@@ -1,7 +1,7 @@
-site_name: Porfolio
+site_name: Robert Bąk — Portfolio
 site_author: Robert Bąk
 site_description: >-
-    Portfolio moich projektów z Data Science i AI!
+    Portfolio projektów z Data Science, AI i inżynierii oprogramowania
 
 repo_name: robetr286/portfolio
 repo_url: https://github.com/robetr286/portfolio
@@ -9,19 +9,40 @@ repo_url: https://github.com/robetr286/portfolio
 theme:
   name: material
   palette:
-    primary: lime
+    scheme: default
+    primary: custom
+    accent: light green
+  font:
+    text: Inter
+    code: JetBrains Mono
   icon:
+    logo: fontawesome/solid/microchip
     repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - attr_list
+  - md_in_html
   - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-- Obecny projekt:
-  - "Talk_electronic": Talk_electronics/index.md
+- Strona główna: index.md
+- Projekty:
+  - Talk Electronics: Talk_electronics/index.md
 
   
