@@ -10,12 +10,18 @@ theme:
   name: material
   palette:
     primary: lime
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - attr_list
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-- Strona Domowa: index.md
 - Obecny projekt:
   - "Talk_electronic": Talk_electronics/index.md
-- Poprzednie projekty:
-  - "Titanic": titanic/index.md
-  - "Iris": iris/index.md
+
   
