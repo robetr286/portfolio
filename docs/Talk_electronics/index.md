@@ -221,7 +221,7 @@ Projekt pokazuje praktyczne wykorzystanie narzędzi AI w developmentcie: szybsze
 
 ## Repozytorium
 
-[:fontawesome-brands-github: Talk Electronics na GitHub](https://github.com/robetr286/Talk_electronic){ .md-button .md-button--primary }
+[:fontawesome-brands-github: Talk Electronics na GitHub](https://github.com/robetr286/talk-electronics){ .md-button .md-button--primary }
 
 ---
 
