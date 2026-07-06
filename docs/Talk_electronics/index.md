@@ -38,7 +38,7 @@ Moduł OCR oparty o **PaddleOCR PP-OCRv4** odczytuje tekst ze schematu z precyzj
 
 - **Kategoryzacja** — automatyczne rozpoznawanie typu tokena: komponent (R1, Q410), wartość (33K, 2SC1740), etykieta sieci (VCC, GND), inne
 - **Smart pairing** — inteligentne parowanie komponentów z ich wartościami (Q410 → 2SC1740, R436 → 100K) z uwzględnieniem semantyki (tranzystory parują z modelami półprzewodników)
-- **Postprocessing** — 16-etapowy pipeline czyszczenia tokenów: korekcja OCR (1O0K→100K), scalanie fragmentów pionowych, usuwanie szumu, naprawa oznaczeń półprzewodników (2SCI740→2SC1740)
+- **Postprocessing** — wieloetapowy pipeline czyszczenia tokenów korekcja OCR (1O0K→100K), scalanie fragmentów pionowych, usuwanie szumu, naprawa oznaczeń półprzewodników (2SCI740→2SC1740)
 - **Klikalne bounding boxy** — każdy rozpoznany tekst jest interaktywny na Canvasie
 
 
@@ -151,8 +151,9 @@ Stack został dobrany pod realne wymagania produktu CV/AI: przetwarzanie dokumen
 
 Jednym z mocniejszych elementów projektu jest **pipeline generowania danych treningowych**, który ogranicza zależność od ręcznie anotowanych zbiorów i przyspiesza eksperymenty modelowe:
 
-1. **KiCad API** → automatycznie generowane schematy elektroniczne
-2. **Eksport** → PDF/PNG w 300 DPI z anotacjami COCO
+1. **Mock generator PIL** → losowe rozmieszczanie komponentów, eksport PNG + anotacje JSON/COCO
+   *(integracja KiCad API planowana w przyszłości)*
+2. **Eksport** → PNG z anotacjami COCO
 3. **Augmentacje** — albumentations: szum, blur, rotacja, dropout (profile: light/scan/heavy)
 4. **Konwersja** → COCO → format YOLO z automatycznym splitem train/val/test
 
@@ -208,7 +209,7 @@ Canvas editor wspiera operatora na każdym etapie: kadrowanie, retusz, deskew i 
 Projekt ma pokrycie testami unit i E2E (Playwright) oraz automatyczne kontrole jakości w CI/CD.
 
 **📊 Syntetyczny pipeline danych**<br>
-KiCad → COCO → YOLO z augmentacjami daje skalowalny sposób rozwoju datasetu i modeli.
+Mock generator PIL → COCO → YOLO z augmentacjami daje skalowalny sposób rozwoju datasetu i modeli.
 
 **🤖 Duet człowiek + AI**<br>
 Projekt pokazuje praktyczne wykorzystanie narzędzi AI w developmentcie: szybsze iteracje przy zachowaniu kontroli produktowej i technicznej.
