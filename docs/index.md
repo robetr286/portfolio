@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+<div class="lang-switcher lang-switcher--hero" markdown>
+
+[**PL - wersja**](.){ .lang-btn .lang-btn--active }
+[**EN - version**](en/){ .lang-btn }
+
+</div>
+
 <div class="hero-banner" markdown>
 
 <img src="assets/hero-electronics-portfolio.svg" alt="" class="hero-bg-illustration" />

@@ -1,7 +1,7 @@
 site_name: Robert Bąk — Portfolio
 site_author: Robert Bąk
 site_description: >-
-    Portfolio projektów z Data Science, AI i inżynierii oprogramowania
+    Portfolio of Data Science, AI and software engineering projects
 
 repo_name: robetr286/portfolio
 repo_url: https://github.com/robetr286/portfolio
@@ -29,6 +29,33 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: pl
+          default: true
+          name: Polski
+          build: true
+          site_name: Robert Bąk — Portfolio
+          site_description: Portfolio projektów z Data Science, AI i inżynierii oprogramowania
+          nav_translations:
+            Home: Strona główna
+            Projects: Projekty
+            Talk Electronics: Talk Electronics
+        - locale: en
+          name: English
+          build: true
+          site_name: Robert Bąk — Portfolio
+          site_description: Portfolio of Data Science, AI and software engineering projects
+          nav_translations:
+            Home: Home
+            Projects: Projects
+            Talk Electronics: Talk Electronics
+
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -41,8 +68,6 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-- Strona główna: index.md
-- Projekty:
+- Home: index.md
+- Projects:
   - Talk Electronics: Talk_electronics/index.md
-
-  

@@ -1,3 +1,9 @@
+<div class="lang-switcher" markdown>
+
+[**PL - wersja**](.){ .lang-btn .lang-btn--active }
+[**EN - version**](../en/Talk_electronics/){ .lang-btn }
+
+</div>
 
 # Talk Electronics — AI-Powered Schematic Analysis
 
