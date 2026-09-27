@@ -175,9 +175,9 @@ Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i dia
 
 | Faza | Opis | Termin |
 |---|---|---|
-| **Faza I** | Pełna integracja OCR + RT-DETR + netlista | Kwiecień 2026 |
-| **Faza II** | Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI | Czerwiec 2026 |
-| **Faza III** | Deploy produkcyjny na DigitalOcean + testy na trudnych schematach | Sierpień 2026 |
+| **Faza I** | Pełna integracja OCR + RT-DETR + netlista | ✅ Osiągnięte (sierpień 2026) |
+| **Faza II** | Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI | ✅ Osiągnięte lokalnie (wrzesień 2026) |
+| **Faza III** | Deploy produkcyjny na DigitalOcean + testy na trudnych schematach | Czerwiec 2027 |
 
 ### 🔭 Długofalowa wizja
 
