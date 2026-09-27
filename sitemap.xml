@@ -4,28 +4,28 @@
         <loc>None./</loc>
         <lastmod>2026-09-27</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="pl" href="None"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/"/>
     </url>
     <url>
         <loc>NoneTalk_electronics/</loc>
         <lastmod>2026-09-27</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="pl" href="NoneTalk_electronics/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/Talk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="NoneTalk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Talk_electronics/"/>
     </url>
     <url>
-        <loc>Noneen/</loc>
+        <loc>Nonepl/</loc>
         <lastmod>2026-09-27</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="None"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
     </url>
     <url>
-        <loc>Noneen/Talk_electronics/</loc>
+        <loc>Nonepl/Talk_electronics/</loc>
         <lastmod>2026-09-27</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/Talk_electronics/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="NoneTalk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Talk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="NoneTalk_electronics/"/>
     </url>
 </urlset>
