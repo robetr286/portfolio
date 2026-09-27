@@ -6,8 +6,8 @@ hide:
 
 <div class="lang-switcher lang-switcher--hero" markdown>
 
-[**PL - wersja**](.){ .lang-btn .lang-btn--active }
-[**EN - version**](en/){ .lang-btn }
+[**PL - wersja**](pl/){ .lang-btn }
+[**EN - version**](.){ .lang-btn .lang-btn--active }
 
 </div>
 
@@ -31,12 +31,12 @@ hide:
 
 ### :fontawesome-solid-bolt: Talk Electronics
 
-**Automatyczna analiza schematów elektronicznych**
+**Automatic analysis of electronic schematics**
 
-Aplikacja webowa Flask wykorzystująca modele AI (RT-DETR, PaddleOCR) do rozpoznawania
-symboli, generowania netlist i diagnostyki obwodów z uploadowanych plików PDF/PNG.
+A Flask web app that uses AI models (RT-DETR, PaddleOCR) to recognize component
+symbols, build netlists, and support circuit diagnostics from uploaded PDF/PNG files.
 
-[:octicons-arrow-right-24: Zobacz projekt](Talk_electronics/index.md){ .md-button .md-button--primary }
+[:octicons-arrow-right-24: View project](Talk_electronics/index.md){ .md-button .md-button--primary }
 
 </div>
 
@@ -46,6 +46,6 @@ symboli, generowania netlist i diagnostyki obwodów z uploadowanych plików PDF/
 
 <div class="home-footer" markdown>
 
- :fontawesome-brands-github: [GitHub](https://github.com/robetr286) · :fontawesome-brands-linkedin: [LinkedIn](https://linkedin.com) · <a href="mailto:robetr@wp.pl" title="robetr@wp.pl" aria-label="robetr@wp.pl">:fontawesome-solid-envelope:</a> Kontakt
+ :fontawesome-brands-github: [GitHub](https://github.com/robetr286) · :fontawesome-brands-linkedin: [LinkedIn](https://linkedin.com) · <a href="mailto:robetr@wp.pl" title="robetr@wp.pl" aria-label="robetr@wp.pl">:fontawesome-solid-envelope:</a> Contact
 
 </div>

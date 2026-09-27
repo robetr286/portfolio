@@ -1,236 +1,236 @@
 <div class="lang-switcher" markdown>
 
-[**PL - wersja**](.){ .lang-btn .lang-btn--active }
-[**EN - version**](../en/Talk_electronics/){ .lang-btn }
+[**PL - wersja**](../pl/Talk_electronics/){ .lang-btn }
+[**EN - version**](.){ .lang-btn .lang-btn--active }
 
 </div>
 
 # Talk Electronics — AI-Powered Schematic Analysis
 
 <p style="text-align: center; font-size: 1.2em; color: #888;">
-<em>Od skanu schematu do diagnostyki i netlisty — end-to-end produkt AI dla elektroniki</em>
+<em>From schematic scan to diagnostics and netlist — an end-to-end AI product for electronics</em>
 </p>
 
 ---
 
-## Czym jest Talk Electronics?
+## What is Talk Electronics?
 
-**Talk Electronics** to rozwijana przeze mnie aplikacja AI do automatycznej analizy schematów elektronicznych. System przekształca skany PDF i zdjęcia obwodów w dane maszynowe: wykrywa komponenty, odczytuje ich oznaczenia i wartości, buduje netlistę oraz wspiera diagnostykę krok po kroku.
+**Talk Electronics** is an AI application I am building for automatic analysis of electronic schematics. The system turns PDF scans and circuit photos into machine-readable data: it detects components, reads designators and values, builds a netlist, and supports step-by-step diagnostics.
 
-Projekt rozwijam od września 2025 w szerokiej roli łączącej product thinking, data science, QA i praktyczne wykorzystanie narzędzi AI do przyspieszania developmentu. Odpowiadam zarówno za kierunek produktu, jak i za decyzje techniczne dotyczące pipeline'u OCR, detekcji obiektów, jakości danych oraz doświadczenia użytkownika.
+I have been developing the project since September 2025 in a broad role that combines product thinking, data science, QA, and practical use of AI tools to speed up development. I own both the product direction and technical decisions for the OCR pipeline, object detection, data quality, and user experience.
 
-![Widok główny aplikacji](img/screenshot_01.png)
-*Interfejs główny — automatyczny retusz schematu, nawigacja między zakładkami, wybór filtrów do retuszu*
-
----
-
-## Co potrafi aplikacja?
-
-### 🔍 Detekcja symboli elektronicznych (AI)
-
-Sercem aplikacji jest detektor oparty o **RT-DETR-L** (Real-Time Detection Transformer), rozpoznający komponenty elektroniczne na schemacie: rezystory, kondensatory, tranzystory, układy scalone, cewki i diody.
-
-- Wizualizacja bounding boxów bezpośrednio na schemacie
-- Tabela wyników z etykietą, pewnością i współrzędnymi
-- Lazy-loading GPU — pamięć alokowana dopiero przy pierwszym użyciu
-- Obsługa wielu źródeł: strona PDF, plik graficzny, data-URL
-
-![Detekcja symboli](img/screenshot_02.png)
-*Paleta narzędzi retuszu*
-
-### 📝 OCR — odczyt tekstu ze schematów
-
-Moduł OCR oparty o **PaddleOCR PP-OCRv4** odczytuje tekst ze schematu z precyzją pikselową i stanowi kluczowy element przejścia od obrazu do danych strukturalnych:
-
-- **Kategoryzacja** — automatyczne rozpoznawanie typu tokena: komponent (R1, Q410), wartość (33K, 2SC1740), etykieta sieci (VCC, GND), inne
-- **Smart pairing** — inteligentne parowanie komponentów z ich wartościami (Q410 → 2SC1740, R436 → 100K) z uwzględnieniem semantyki (tranzystory parują z modelami półprzewodników)
-- **Postprocessing** — wieloetapowy pipeline czyszczenia tokenów korekcja OCR (1O0K→100K), scalanie fragmentów pionowych, usuwanie szumu, naprawa oznaczeń półprzewodników (2SCI740→2SC1740)
-- **Klikalne bounding boxy** — każdy rozpoznany tekst jest interaktywny na Canvasie
-
-
-![Wykrywanie obiektów](img/screenshot_05.png)
-*Wykrywanie obiektów*
-
-
-### ✏️ Zaawansowany edytor graficzny
-
-Kompleksowy moduł przygotowania obrazu zaprojektowany pod realne schematy: zniszczone, przekrzywione, zaszumione lub sfotografowane w trudnych warunkach.
-
-- **Kadrowanie** — prostokątne i wielokątne (polygon)
-- **Prostowanie** — automatyczny deskew + ręczny suwak kąta
-- **Canvas editor** — pędzel, gumka, rysowanie w różnych kolorach z regulacją grubości
-- **Binaryzacja** — metoda Otsu, adaptacyjna, ręczny próg
-- **Retusz** — usuwanie szumu, filtry morfologiczne, medianowe, denoise
-- **Undo/Redo** — pełna historia operacji
-
-![Edycja schematu](img/screenshot_03.png)
-*Zakładka [Strefy ignorowane]*
-
-### 🔗 Generowanie netlisty i eksport SPICE
-
-Na podstawie wykrytych symboli i segmentacji linii aplikacja buduje graf połączeń, który prowadzi do wygenerowania netlisty gotowej do dalszej analizy:
-
-- Automatyczna ekstrakcja linii (szkieletyzacja) i węzłów
-- Generowanie netlisty z grafem krawędzi i cyklami
-- **Edge Connectors** — łączenie wielostronicowych schematów z formularzem konektorów
-- **Eksport do SPICE** (.cir) — gotowy deck do symulacji obwodu
-
-
-![screenshot_06](img/screenshot_06.png)
-*wykrywanie linii*
-
-
-### 💬 Diagnostyczny chat AI
-
-Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla warstwy diagnostycznej AI:
-
-- Sugestie pomiarów (napięcie, rezystancja, spadek)
-- Flagowanie podejrzanych węzłów i anomalii
-- Krok po kroku przez proces naprawy
-- Izolacja problemowych sekcji schematu
+![Main application view](img/screenshot_01_en.png)
+*Main UI — automatic schematic retouch, tab navigation, and retouch filter selection*
 
 ---
 
-![Architektura](img/screenshot_04.png)
-*Zakładka modelu OCR i korekcji*
+## What the app can do
 
-## 🧰 Stos technologiczny
+### Symbol detection (AI)
 
-Stack został dobrany pod realne wymagania produktu CV/AI: przetwarzanie dokumentów, obsługę nietypowych danych wejściowych, iteracyjny rozwój modeli oraz możliwość przyszłego wdrożenia produkcyjnego.
+At the core is an **RT-DETR-L** (Real-Time Detection Transformer) detector that recognizes electronic components on a schematic: resistors, capacitors, transistors, ICs, inductors, and diodes.
 
-### 🖥️ Backend
+- Bounding-box overlay drawn directly on the schematic
+- Results table with class label, confidence, and coordinates
+- Lazy GPU loading — VRAM allocated only on first use
+- Multiple sources: PDF page, image file, data-URL
 
-| Technologia | Zastosowanie |
+![Symbol detection](img/screenshot_02_en.png)
+*Retouch tools palette*
+
+### OCR — reading text from schematics
+
+The OCR module, based on **PaddleOCR PP-OCRv4**, reads schematic text with pixel-level boxes and is the key step from image to structured data:
+
+- **Categorization** — token type: component designator (R1, Q410), value (33K, 2SC1740), net label (VCC, GND), other
+- **Smart pairing** — pairing designators with values (Q410 → 2SC1740, R436 → 100K), with semiconductor-aware matching for transistors
+- **Post-processing** — multi-stage token cleanup: OCR correction (1O0K→100K), merging vertical fragments, noise removal, fixing semiconductor marks (2SCI740→2SC1740)
+- **Clickable bounding boxes** — every recognized string is interactive on the canvas
+
+
+![Object detection](img/screenshot_05_en.png)
+*Object detection*
+
+
+### Advanced graphics editor
+
+An image-preparation module built for real schematics: damaged, skewed, noisy, or photographed in difficult conditions.
+
+- **Cropping** — rectangular and polygonal (polygon)
+- **Deskew** — automatic deskew plus a manual angle slider
+- **Canvas editor** — brush, eraser, multi-color drawing with stroke width control
+- **Binarization** — Otsu, adaptive, and manual threshold
+- **Retouch** — denoise, morphological filters, median, blur cleanup
+- **Undo/Redo** — full operation history
+
+![Schematic editing](img/screenshot_03_en.png)
+*Ignored regions tab*
+
+### Netlist generation and SPICE export
+
+From detected symbols and line segmentation the app builds a connectivity graph and produces a netlist for further analysis:
+
+- Automatic line extraction (skeletonization) and junctions
+- Netlist with edge graph and cycle detection
+- **Edge connectors** — multi-page schematic linking with a connector form
+- **SPICE export** (.cir) — a deck ready for circuit simulation
+
+
+![Line detection](img/screenshot_06_en.png)
+*Line / junction graph detection*
+
+
+### Diagnostic AI chat
+
+The chat module uses the generated netlist as context for an AI diagnostic layer:
+
+- Suggested measurements (voltage, resistance, drop)
+- Flagging suspicious nodes and anomalies
+- Step-by-step repair guidance
+- Isolating problem sections of the schematic
+
+---
+
+![Architecture](img/screenshot_04_en.png)
+*OCR model and correction tab*
+
+## Technology stack
+
+The stack was chosen for real CV/AI product needs: document processing, unusual input data, iterative model development, and a path to production deployment.
+
+### Backend
+
+| Technology | Role |
 |---|---|
-| **Python 3.11** | Język główny |
-| **Flask** | Framework webowy (factory pattern + Blueprints) |
-| **REST API** | Komunikacja frontend-backend (JSON) |
+| **Python 3.11** | Primary language |
+| **Flask** | Web framework (factory pattern + Blueprints) |
+| **REST API** | Frontend–backend communication (JSON) |
 
-### 🤖 AI / Machine Learning
+### AI / Machine Learning
 
-| Model / Biblioteka | Zastosowanie |
+| Model / library | Role |
 |---|---|
-| **RT-DETR-L** (Ultralytics) | Detekcja symboli elektronicznych (transformer) |
-| **PaddleOCR PP-OCRv4** | OCR z precyzyjnymi bounding boxami |
-| **PyTorch** | Framework deep learning |
-| **PaddlePaddle 3.3** | Framework dla OCR |
+| **RT-DETR-L** (Ultralytics) | Electronic symbol detection (transformer) |
+| **PaddleOCR PP-OCRv4** | OCR with precise bounding boxes |
+| **PyTorch** | Deep-learning framework |
+| **PaddlePaddle 3.3** | Framework for OCR |
 
-### 🖼️ Przetwarzanie obrazów
+### Image processing
 
-| Biblioteka | Zastosowanie |
+| Library | Role |
 |---|---|
-| **OpenCV** | Binaryzacja, morfologia, deskew, filtry |
-| **PyMuPDF** (fitz) | Rendering PDF → PNG |
-| **Pillow** | Manipulacja obrazami, maski |
-| **NumPy** | Operacje macierzowe |
+| **OpenCV** | Binarization, morphology, deskew, filters |
+| **PyMuPDF** (fitz) | PDF → PNG rendering |
+| **Pillow** | Image manipulation, masks |
+| **NumPy** | Array operations |
 
-### 🎛️ Frontend
+### Frontend
 
-| Technologia | Zastosowanie |
+| Technology | Role |
 |---|---|
-| **JavaScript** (modularny) | Logika UI |
-| **Canvas API** | Interaktywny edytor obrazu |
-| **Bootstrap 5.3** | Responsywny layout |
-| **HTML/CSS** | Interfejs użytkownika |
+| **JavaScript** (modular) | UI logic |
+| **Canvas API** | Interactive image editor |
+| **Bootstrap 5.3** | Responsive layout |
+| **HTML/CSS** | User interface |
 
-### ✅ Testy i jakość kodu
+### Testing and code quality
 
-| Narzędzie | Zastosowanie |
+| Tool | Role |
 |---|---|
-| **Pytest** | Testy unit/integration (284+ testów) |
-| **Playwright** | Testy E2E (smoke + full) |
-| **GitHub Actions** | CI/CD z automated checks |
+| **Pytest** | Unit/integration tests (284+) |
+| **Playwright** | E2E tests (smoke + full) |
+| **GitHub Actions** | CI/CD with automated checks |
 | **Pre-commit hooks** | isort, flake8, YAML validation |
 
-### 🏗️ Infrastruktura
+### Infrastructure
 
-| Technologia | Zastosowanie |
+| Technology | Role |
 |---|---|
-| **Linux (Ubuntu)** | Środowisko produkcyjne |
-| **Docker** | Konteneryzacja (GPU training) |
-| **Conda** | Zarządzanie środowiskiem |
-| **DigitalOcean** | Docelowy hosting |
+| **Linux (Ubuntu)** | Runtime environment |
+| **Docker** | Containerization (GPU training) |
+| **Conda** | Environment management |
+| **DigitalOcean** | Target hosting |
 
 ---
 
-## 🧪 Pipeline danych syntetycznych
+## Synthetic training-data pipeline
 
-Jednym z mocniejszych elementów projektu jest **pipeline generowania danych treningowych**, który ogranicza zależność od ręcznie anotowanych zbiorów i przyspiesza eksperymenty modelowe:
+A strong part of the project is the **training-data generation pipeline**, which reduces dependence on hand-labeled sets and speeds up model experiments:
 
-1. **Mock generator PIL** → losowe rozmieszczanie komponentów, eksport PNG + anotacje JSON/COCO
-   *(integracja KiCad API planowana w przyszłości)*
-2. **Eksport** → PNG z anotacjami COCO
-3. **Augmentacje** — albumentations: szum, blur, rotacja, dropout (profile: light/scan/heavy)
-4. **Konwersja** → COCO → format YOLO z automatycznym splitem train/val/test
+1. **PIL mock generator** → random component placement, PNG export + JSON/COCO annotations
+   *(KiCad API integration planned)*
+2. **Export** → PNG with COCO annotations
+3. **Augmentations** — albumentations: noise, blur, rotation, dropout (profiles: light/scan/heavy)
+4. **Conversion** → COCO → YOLO format with automatic train/val/test split
 
-Dzięki temu model uczy się nie tylko na danych ręcznie przygotowanych, ale także na tysiącach automatycznie wygenerowanych schematów. Z perspektywy produktowej i inżynierskiej oznacza to szybsze iteracje, łatwiejsze testowanie hipotez i większą kontrolę nad jakością datasetu.
+The model therefore learns not only on hand-prepared data but also on thousands of synthetically generated schematics. Product- and engineering-wise that means faster iterations, easier hypothesis testing, and tighter control of dataset quality.
 
 ---
 
-## 🧭 Dokąd zmierzamy?
+## Where we are heading
 
-### Wizja
+### Vision
 
-Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i diagnostyki elektroniki**, które:
+Talk Electronics aims to become a **complete tool for electronics analysis and diagnostics** that:
 
-- Zamienia każdy skan schematu w interaktywny, maszynowo-czytelny dokument
-- Prowadzi użytkownika krok po kroku przez diagnostykę usterki
-- Uczy się na każdej korekcie — im więcej napraw, tym system celniejszy
+- Turns every schematic scan into an interactive, machine-readable document
+- Guides the user step by step through fault diagnosis
+- Learns from every correction — the more repairs, the more accurate the system
 
-### 🎯 Najbliższe cele
+### Near-term goals
 
-| Faza | Opis | Termin |
+| Phase | Description | Target |
 |---|---|---|
-| **Faza I** | Pełna integracja OCR + RT-DETR + netlista | ✅ Osiągnięte (sierpień 2026) |
-| **Faza II** | Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI | ✅ Osiągnięte lokalnie (wrzesień 2026) |
-| **Faza III** | Deploy produkcyjny na DigitalOcean + testy na trudnych schematach | Czerwiec 2027 |
+| **Phase I** | Full OCR + RT-DETR + netlist integration | ✅ Done (August 2026) |
+| **Phase II** | Beta pipeline: Image → detection → OCR → netlist → AI chat | ✅ Done locally (September 2026) |
+| **Phase III** | Production deploy on DigitalOcean + hard-schematic testing | June 2027 |
 
-### 🔭 Długofalowa wizja
+### Longer-term vision
 
-- **Dialog diagnostyczny** — system sugeruje konkretne pomiary i buduje przebieg diagnozy
-- **Proces naprawy** — wskazania, które elementy wymienić i jak zweryfikować naprawę
-- **Self-improving** — każda korekta użytkownika trafia do bazy treningowej, model staje się coraz lepszy
-- **Obsługa legacy hardware** — schematy z lat 70–90, papierowe, zniszczone, słabo czytelne
+- **Diagnostic dialogue** — suggested measurements and a structured diagnosis path
+- **Repair process** — which parts to replace and how to verify the fix
+- **Self-improving** — every user correction feeds the training base
+- **Legacy hardware** — 1970s–90s paper schematics, damaged and hard to read
 
 ---
 
-## Kluczowe wyróżniki
+## Key differentiators
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
 <div>
 
-**🔄 End-to-End Pipeline**<br>
-Nie pojedynczy model, lecz pełna ścieżka: od PDF i preprocessingu, przez detekcję i OCR, do netlisty, diagnostyki i eksportu SPICE.
+**End-to-End Pipeline**<br>
+Not a single model, but a full path: from PDF and preprocessing, through detection and OCR, to netlist, diagnostics, and SPICE export.
 
-**🏠 Lokalna AI**<br>
-RT-DETR i PaddleOCR działają lokalnie, co obniża koszty operacyjne i daje pełną kontrolę nad danymi wejściowymi.
+**Local AI**<br>
+RT-DETR and PaddleOCR run locally, lowering operating cost and keeping full control of input data.
 
-**✏️ Interaktywna edycja**<br>
-Canvas editor wspiera operatora na każdym etapie: kadrowanie, retusz, deskew i definiowanie stref ignorowanych.
+**Interactive editing**<br>
+The canvas editor supports the operator at every stage: crop, retouch, deskew, and ignored regions.
 
 </div>
 <div>
 
-**🧪 284+ automatycznych testów**<br>
-Projekt ma pokrycie testami unit i E2E (Playwright) oraz automatyczne kontrole jakości w CI/CD.
+**284+ automated tests**<br>
+Unit and E2E (Playwright) coverage plus automated quality gates in CI/CD.
 
-**📊 Syntetyczny pipeline danych**<br>
-Mock generator PIL → COCO → YOLO z augmentacjami daje skalowalny sposób rozwoju datasetu i modeli.
+**Synthetic data pipeline**<br>
+PIL mock generator → COCO → YOLO with augmentations scales dataset and model development.
 
-**🤖 Duet człowiek + AI**<br>
-Projekt pokazuje praktyczne wykorzystanie narzędzi AI w developmentcie: szybsze iteracje przy zachowaniu kontroli produktowej i technicznej.
+**Human + AI duo**<br>
+The project shows practical use of AI tools in development: faster iterations with product and technical control retained.
 
 </div>
 </div>
 
 ---
 
-## Repozytorium
+## Repository
 
-[:fontawesome-brands-github: Talk Electronics na GitHub](https://github.com/robetr286/talk-electronics){ .md-button .md-button--primary }
+[:fontawesome-brands-github: Talk Electronics on GitHub](https://github.com/robetr286/Talk_electronic_cursor){ .md-button .md-button--primary }
 
 ---
 
 <p style="text-align: center; color: #888; font-size: 0.9em;">
-Strona portfolio · Robert Bąk · Marzec 2026
+Portfolio site · Robert Bąk · September 2026
 </p>

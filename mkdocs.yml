@@ -36,17 +36,8 @@ plugins:
       fallback_to_default: true
       reconfigure_material: true
       languages:
-        - locale: pl
-          default: true
-          name: Polski
-          build: true
-          site_name: Robert Bąk — Portfolio
-          site_description: Portfolio projektów z Data Science, AI i inżynierii oprogramowania
-          nav_translations:
-            Home: Strona główna
-            Projects: Projekty
-            Talk Electronics: Talk Electronics
         - locale: en
+          default: true
           name: English
           build: true
           site_name: Robert Bąk — Portfolio
@@ -54,6 +45,15 @@ plugins:
           nav_translations:
             Home: Home
             Projects: Projects
+            Talk Electronics: Talk Electronics
+        - locale: pl
+          name: Polski
+          build: true
+          site_name: Robert Bąk — Portfolio
+          site_description: Portfolio projektów z Data Science, AI i inżynierii oprogramowania
+          nav_translations:
+            Home: Strona główna
+            Projects: Projekty
             Talk Electronics: Talk Electronics
 
 markdown_extensions:
