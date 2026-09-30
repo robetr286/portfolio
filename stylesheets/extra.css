@@ -243,9 +243,55 @@
   min-height: 100%;
 }
 
-.project-card .md-button {
+.project-card p:has(> a.md-button) {
   margin-top: auto;
-  align-self: flex-start;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.project-card .md-button {
+  margin-top: 0;
+  align-self: center;
+}
+
+.project-card a.md-button--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11.5rem;
+  padding: 0.72rem 1.4rem;
+  border-radius: 11px;
+  border: 1px solid #1b5e20 !important;
+  background: linear-gradient(180deg, #8ed492 0%, #4caf50 46%, #2e7d32 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 rgba(20, 60, 24, 0.28);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.08) inset,
+    0 2px 0 #1b5e20,
+    0 8px 16px rgba(27, 94, 32, 0.28);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.project-card a.md-button--primary:hover {
+  background: linear-gradient(180deg, #a5d6a7 0%, #66bb6a 48%, #388e3c 100%) !important;
+  border-color: #1b5e20 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 3px 0 #1b5e20,
+    0 12px 20px rgba(27, 94, 32, 0.32);
+}
+
+.project-card a.md-button--primary:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 1px 0 #1b5e20,
+    0 3px 6px rgba(27, 94, 32, 0.22);
 }
 
 .project-card::before {
