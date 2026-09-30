@@ -33,10 +33,33 @@ hide:
 
 **Automatyczna analiza schematów elektronicznych**
 
-Aplikacja webowa Flask wykorzystująca modele AI (RT-DETR, PaddleOCR) do rozpoznawania
-symboli, generowania netlist i diagnostyki obwodów z uploadowanych plików PDF/PNG.
+Aplikacja webowa, która z PDF/PNG schematu wyciąga symbole, buduje netlistę i wspiera diagnostykę obwodów.
 
 [:octicons-arrow-right-24: Zobacz projekt](Talk_electronics/index.md){ .md-button .md-button--primary }
+
+</div>
+
+<div class="project-card" markdown>
+
+### :fontawesome-solid-microphone: Protokolant
+
+**Lokalne nagranie → tekst → protokół ze spotkania**
+
+Aplikacja na komputer: nagrywa rozmowę, zamienia mowę na tekst i robi krótkie podsumowanie. Audio i treść zostają u Ciebie — nic nie idzie do chmury jako usługa transkrypcji.
+
+[:octicons-arrow-right-24: Zobacz projekt](Protokolant/index.md){ .md-button .md-button--primary }
+
+</div>
+
+<div class="project-card" markdown>
+
+### :fontawesome-solid-book-open: Lektorium
+
+**Wkrótce**
+
+Trzeci projekt w portfolio — opis i materiały pojawią się w kolejnym kroku.
+
+[:octicons-arrow-right-24: Zapowiedź](Lektorium/index.md){ .md-button }
 
 </div>
 

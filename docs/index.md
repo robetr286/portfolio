@@ -40,6 +40,30 @@ symbols, build netlists, and support circuit diagnostics from uploaded PDF/PNG f
 
 </div>
 
+<div class="project-card" markdown>
+
+### :fontawesome-solid-microphone: Protokolant
+
+**Local meeting notes — recording to text on your PC**
+
+Desktop app: record a call, turn speech into text, get a short protocol. Audio stays on your machine — no cloud transcription service. Full write-up is Polish-first for now.
+
+[:octicons-arrow-right-24: Polish page](Protokolant/index.md){ .md-button .md-button--primary }
+
+</div>
+
+<div class="project-card" markdown>
+
+### :fontawesome-solid-book-open: Lektorium
+
+**Coming soon**
+
+Third portfolio slot — full description next.
+
+[:octicons-arrow-right-24: Placeholder](Lektorium/index.md){ .md-button }
+
+</div>
+
 </div>
 
 ---

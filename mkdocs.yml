@@ -46,6 +46,8 @@ plugins:
             Home: Home
             Projects: Projects
             Talk Electronics: Talk Electronics
+            Protokolant: Protokolant
+            Lektorium: Lektorium
         - locale: pl
           name: Polski
           build: true
@@ -55,6 +57,8 @@ plugins:
             Home: Strona główna
             Projects: Projekty
             Talk Electronics: Talk Electronics
+            Protokolant: Protokolant
+            Lektorium: Lektorium
 
 markdown_extensions:
   - attr_list
@@ -71,3 +75,5 @@ nav:
 - Home: index.md
 - Projects:
   - Talk Electronics: Talk_electronics/index.md
+  - Protokolant: Protokolant/index.md
+  - Lektorium: Lektorium/index.md

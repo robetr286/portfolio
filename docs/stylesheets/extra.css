@@ -218,12 +218,13 @@
   font-weight: 700;
 }
 
-/* ---------- Card grid on home ---------- */
+/* ---------- Card grid on home (3 projects side by side) ---------- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin: 0.35rem 0 1rem;
+  align-items: stretch;
 }
 
 .project-card {
@@ -233,10 +234,18 @@
     #ffffff;
   border: 1px solid #e7e1ce;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.35rem 1.25rem 1.5rem;
   box-shadow: 0 8px 24px rgba(38, 50, 56, 0.04);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, border-width 0.2s;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.project-card .md-button {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .project-card::before {
@@ -302,6 +311,12 @@
   border-top: 2px solid rgba(102, 187, 106, 0.3);
 }
 
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .hero-banner {
     min-height: 0;
@@ -315,6 +330,10 @@
   .md-sidebar--primary .md-sidebar__scrollwrap {
     border-radius: 12px;
     padding: 0.7rem 0.45rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 
