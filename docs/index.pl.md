@@ -57,7 +57,7 @@ Aplikacja na komputer: nagrywa rozmowę, zamienia mowę na tekst i robi krótkie
 
 **Angielska lekcja po polsku — napisy albo lektor**
 
-Aplikacja na Twoim komputerze: wgrywasz lekcję, do której masz prawa, dostajesz polskie napisy i możesz odsłuchać je lektorem. Każdy krok zaczyna się dopiero na Twoją prośbę.
+Aplikacja na Twoim komputerze: wgrywasz lekcję, do której masz prawa, dostajesz polskie napisy i możesz odsłuchać je lektorem.
 
 [:octicons-arrow-right-24: Zobacz projekt](Lektorium/index.md){ .md-button .md-button--primary }
 
