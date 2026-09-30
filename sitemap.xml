@@ -2,28 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>None./</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="None"/>
         <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/"/>
     </url>
     <url>
+        <loc>NoneLektorium/</loc>
+        <lastmod>2026-09-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="NoneLektorium/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Lektorium/"/>
+    </url>
+    <url>
+        <loc>NoneProtokolant/</loc>
+        <lastmod>2026-09-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="NoneProtokolant/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Protokolant/"/>
+    </url>
+    <url>
         <loc>NoneTalk_electronics/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="NoneTalk_electronics/"/>
         <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Talk_electronics/"/>
     </url>
     <url>
         <loc>Nonepl/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/"/>
         <xhtml:link rel="alternate" hreflang="en" href="None"/>
     </url>
     <url>
+        <loc>Nonepl/Lektorium/</loc>
+        <lastmod>2026-09-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Lektorium/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="NoneLektorium/"/>
+    </url>
+    <url>
+        <loc>Nonepl/Protokolant/</loc>
+        <lastmod>2026-09-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Protokolant/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="NoneProtokolant/"/>
+    </url>
+    <url>
         <loc>Nonepl/Talk_electronics/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Talk_electronics/"/>
         <xhtml:link rel="alternate" hreflang="en" href="NoneTalk_electronics/"/>
