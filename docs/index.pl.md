@@ -55,11 +55,11 @@ Aplikacja na komputer: nagrywa rozmowę, zamienia mowę na tekst i robi krótkie
 
 ### :fontawesome-solid-book-open: Lektorium
 
-**Wkrótce**
+**Angielska lekcja po polsku — napisy albo lektor**
 
-Trzeci projekt w portfolio — opis i materiały pojawią się w kolejnym kroku.
+Aplikacja na Twoim komputerze: wgrywasz lekcję, do której masz prawa, dostajesz polskie napisy i możesz odsłuchać je lektorem. Każdy krok zaczyna się dopiero na Twoją prośbę.
 
-[:octicons-arrow-right-24: Zapowiedź](Lektorium/index.md){ .md-button }
+[:octicons-arrow-right-24: Zobacz projekt](Lektorium/index.md){ .md-button .md-button--primary }
 
 </div>
 

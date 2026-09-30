@@ -56,11 +56,11 @@ Desktop app: record a call, turn speech into text, get a short protocol. Audio s
 
 ### :fontawesome-solid-book-open: Lektorium
 
-**Coming soon**
+**Polish lesson voice and captions — local app**
 
-Third portfolio slot — full description next.
+Turns an English lesson you have rights to into Polish captions or a lector voice, on your computer. Full write-up is Polish-first for now.
 
-[:octicons-arrow-right-24: Placeholder](Lektorium/index.md){ .md-button }
+[:octicons-arrow-right-24: Polish page](Lektorium/index.md){ .md-button .md-button--primary }
 
 </div>
 
