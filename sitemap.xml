@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>None./</loc>
+        <loc>https://robetr286.github.io/portfolio/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/"/>
     </url>
     <url>
-        <loc>NoneLektorium/</loc>
+        <loc>https://robetr286.github.io/portfolio/Lektorium/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="NoneLektorium/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Lektorium/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/Lektorium/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/Lektorium/"/>
     </url>
     <url>
-        <loc>NoneProtokolant/</loc>
+        <loc>https://robetr286.github.io/portfolio/Protokolant/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="NoneProtokolant/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Protokolant/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/Protokolant/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/Protokolant/"/>
     </url>
     <url>
-        <loc>NoneTalk_electronics/</loc>
+        <loc>https://robetr286.github.io/portfolio/Talk_electronics/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="NoneTalk_electronics/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Talk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/Talk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/Talk_electronics/"/>
     </url>
     <url>
-        <loc>Nonepl/</loc>
+        <loc>https://robetr286.github.io/portfolio/pl/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/"/>
     </url>
     <url>
-        <loc>Nonepl/Lektorium/</loc>
+        <loc>https://robetr286.github.io/portfolio/pl/Lektorium/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Lektorium/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="NoneLektorium/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/Lektorium/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/Lektorium/"/>
     </url>
     <url>
-        <loc>Nonepl/Protokolant/</loc>
+        <loc>https://robetr286.github.io/portfolio/pl/Protokolant/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Protokolant/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="NoneProtokolant/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/Protokolant/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/Protokolant/"/>
     </url>
     <url>
-        <loc>Nonepl/Talk_electronics/</loc>
+        <loc>https://robetr286.github.io/portfolio/pl/Talk_electronics/</loc>
         <lastmod>2026-10-03</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="pl" href="Nonepl/Talk_electronics/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="NoneTalk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://robetr286.github.io/portfolio/pl/Talk_electronics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://robetr286.github.io/portfolio/Talk_electronics/"/>
     </url>
 </urlset>
