@@ -137,6 +137,11 @@ body:has(.project-grid) .md-footer {
   display: none;
 }
 
+/* No extra H1 under header on home */
+.md-typeset:has(.project-grid) > h1:first-child {
+  display: none;
+}
+
 .hero-banner::before {
   content: "";
   position: absolute;
@@ -406,7 +411,7 @@ body:has(.project-grid) .md-footer {
   position: absolute;
   inset: 0 auto auto 0;
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: linear-gradient(90deg, var(--card-accent-deep), var(--card-accent) 55%, transparent 92%);
   opacity: 0.95;
   pointer-events: none;
@@ -468,10 +473,6 @@ body:has(.project-grid) .md-footer {
   color: var(--card-title);
   font-size: 0.8rem;
   line-height: 1.25;
-}
-
-.project-card::before {
-  height: 4px;
 }
 
 /* ---------- Home footer ---------- */
