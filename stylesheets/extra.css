@@ -1,8 +1,17 @@
 /* ===== Portfolio – custom theme (light) ===== */
 
-/* ---------- Header: name only (no chip logo / no “Strona główna”) ---------- */
+/* ---------- Header: microchip + „Robert Bąk - portfolio” (bez „Strona główna”) ---------- */
 .md-header__button.md-logo {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.15rem;
+}
+
+.md-header__button.md-logo svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentColor;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.18));
 }
 
 .md-header__topic[data-md-component="header-topic"] {
@@ -10,7 +19,7 @@
 }
 
 .md-header__title {
-  margin-left: 0.35rem;
+  margin-left: 0.15rem;
 }
 
 .md-header__topic:first-child .md-ellipsis {
