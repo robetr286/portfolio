@@ -328,20 +328,36 @@ body:has(.project-grid) .md-footer {
 .project-card-visual {
   display: block;
   width: 100%;
-  height: clamp(11rem, 32vh, 20rem);
+  height: clamp(11rem, 30vh, 18rem);
   max-height: none;
   aspect-ratio: auto;
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
   border: 1px solid color-mix(in srgb, var(--card-border) 80%, var(--card-accent) 20%);
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.35rem;
   box-shadow: 0 4px 14px color-mix(in srgb, var(--card-glow) 55%, transparent);
+  flex: 0 0 auto;
+}
+
+/* Blok tekstu w środkowej części karty — luz nad i pod opisem */
+.project-card-mid {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0.55rem 0.35rem;
+  min-height: 5.5rem;
+}
+
+.project-card-mid p {
+  margin: 0.2rem 0;
+  text-align: center;
 }
 
 .project-card p:has(> a.md-button) {
-  margin-top: auto;
+  margin-top: 0.35rem;
   margin-bottom: 0;
   text-align: center;
 }
@@ -453,9 +469,10 @@ body:has(.project-grid) .md-footer {
 }
 
 .project-card h3 {
-  margin: 0.05rem 0 0.15rem;
-  font-size: 0.95rem;
+  margin: 0.15rem 0 0;
+  font-size: 1rem;
   color: var(--card-title);
+  text-align: center;
 }
 
 .project-card h3 .twemoji,
@@ -465,23 +482,23 @@ body:has(.project-grid) .md-footer {
 
 .project-card p {
   color: var(--card-body);
-  font-size: 0.76rem;
-  line-height: 1.3;
+  font-size: 0.78rem;
+  line-height: 1.35;
   margin: 0.12rem 0;
 }
 
-/* Opisy kart — max 2 linie, żeby CTA było w pierwszym ekranie */
-.project-card > p:not(:has(> a.md-button)):not(.project-card-goal) {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+.project-card-mid p:not(:has(strong)) {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
 }
 
 .project-card p strong {
   color: var(--card-title);
-  font-size: 0.8rem;
-  line-height: 1.25;
+  font-size: 0.84rem;
+  line-height: 1.3;
+  display: block;
+  text-align: center;
 }
 
 /* ---------- Home footer ---------- */
