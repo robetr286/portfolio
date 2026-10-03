@@ -305,6 +305,17 @@
   --btn-shadow: rgba(28, 59, 42, 0.34);
 }
 
+.project-card-visual {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--card-border) 80%, var(--card-accent) 20%);
+  margin: 0 0 0.85rem;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--card-glow) 55%, transparent);
+}
+
 .project-card p:has(> a.md-button) {
   margin-top: auto;
   margin-bottom: 0;
@@ -314,6 +325,28 @@
 .project-card .md-button {
   margin-top: 0;
   align-self: center;
+}
+
+/* Cel pod przyciskiem — tylko obrys liter w kolorze karty */
+.project-card-goal {
+  margin: 0.7rem 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.35px var(--card-accent-deep);
+  paint-order: stroke fill;
+}
+
+@supports not (-webkit-text-stroke: 1px black) {
+  .project-card-goal {
+    color: var(--card-accent-deep) !important;
+    -webkit-text-fill-color: var(--card-accent-deep);
+    background: none;
+  }
 }
 
 .project-card a.md-button--primary {
