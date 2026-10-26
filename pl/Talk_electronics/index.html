@@ -461,6 +461,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#strefy-ignorowane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Strefy ignorowane
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generowanie-netlisty-i-eksport-spice" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -777,8 +788,8 @@
 <li>Lazy-loading GPU — pamięć alokowana dopiero przy pierwszym użyciu</li>
 <li>Obsługa wielu źródeł: strona PDF, plik graficzny, data-URL</li>
 </ul>
-<p><img alt="Detekcja symboli" src="../../Talk_electronics/img/screenshot_02.png" />
-<em>Paleta narzędzi retuszu</em></p>
+<p><img alt="Detekcja symboli" src="../../Talk_electronics/img/screenshot_05.png" />
+<em>Detekcja symboli — ramki klas z pewnością (RT-DETR)</em></p>
 <h3 id="ocr-odczyt-tekstu-ze-schematow">📝 OCR — odczyt tekstu ze schematów</h3>
 <p>Moduł OCR oparty o <strong>PaddleOCR PP-OCRv4</strong> odczytuje tekst ze schematu z precyzją pikselową i stanowi kluczowy element przejścia od obrazu do danych strukturalnych:</p>
 <ul>
@@ -787,8 +798,8 @@
 <li><strong>Postprocessing</strong> — wieloetapowy pipeline czyszczenia tokenów korekcja OCR (1O0K→100K), scalanie fragmentów pionowych, usuwanie szumu, naprawa oznaczeń półprzewodników (2SCI740→2SC1740)</li>
 <li><strong>Klikalne bounding boxy</strong> — każdy rozpoznany tekst jest interaktywny na Canvasie</li>
 </ul>
-<p><img alt="Wykrywanie obiektów" src="../../Talk_electronics/img/screenshot_05.png" />
-<em>Wykrywanie obiektów</em></p>
+<p><img alt="OCR" src="../../Talk_electronics/img/screenshot_04.png" />
+<em>Zakładka OCR — odczytane napisy i korekcja</em></p>
 <h3 id="zaawansowany-edytor-graficzny">✏️ Zaawansowany edytor graficzny</h3>
 <p>Kompleksowy moduł przygotowania obrazu zaprojektowany pod realne schematy: zniszczone, przekrzywione, zaszumione lub sfotografowane w trudnych warunkach.</p>
 <ul>
@@ -799,8 +810,12 @@
 <li><strong>Retusz</strong> — usuwanie szumu, filtry morfologiczne, medianowe, denoise</li>
 <li><strong>Undo/Redo</strong> — pełna historia operacji</li>
 </ul>
-<p><img alt="Edycja schematu" src="../../Talk_electronics/img/screenshot_03.png" />
-<em>Zakładka [Strefy ignorowane]</em></p>
+<p><img alt="Edycja schematu" src="../../Talk_electronics/img/screenshot_02.png" />
+<em>Paleta narzędzi retuszu — ręczna poprawa skanu przed analizą</em></p>
+<h3 id="strefy-ignorowane">🚫 Strefy ignorowane</h3>
+<p>Zakładka <strong>Strefy ignorowane</strong> pozwala oznaczyć na schemacie obszary, których detektory i OCR mają nie brać pod uwagę — np. logo, ramki, bloki tekstu katalogowego czy szum graficzny. Operator rysuje prostokąty / wielokąty (albo pędzlem), zapisuje maskę i dopiero potem uruchamia detekcję symboli oraz odczyt tekstu na „czystszym” polu analizy.</p>
+<p><img alt="Strefy ignorowane" src="../../Talk_electronics/img/screenshot_03.png" />
+<em>Zakładka Strefy ignorowane — różowe maski obszarów pomijanych przez modele</em></p>
 <h3 id="generowanie-netlisty-i-eksport-spice">🔗 Generowanie netlisty i eksport SPICE</h3>
 <p>Na podstawie wykrytych symboli i segmentacji linii aplikacja buduje graf połączeń, który prowadzi do wygenerowania netlisty gotowej do dalszej analizy:</p>
 <ul>
@@ -821,10 +836,8 @@
 </ul>
 <h3 id="napraw-zbuduj-schemat-w-budowie-start-pazdziernik-2026">🛠️ Napraw / zbuduj schemat <em>(w budowie — start: październik 2026)</em></h3>
 <p>Nowa zakładka w nawigacji aplikacji: <strong>Napraw / zbuduj schemat</strong>. Cel produktowy to obsługa schematów trudnych do automatycznej analizy — nieczytelnych, uszkodzonych lub rysowanych ręcznie — tak, by operator mógł uzupełnić lub odbudować warstwę geometryczną przed dalszą detekcją, OCR i netlistą.</p>
-<p><strong>Stan na start prac:</strong> w UI jest już miejsce na zakładkę (szkielet nawigacji i panelu). Narzędzia edycji i logika backendu są kolejnym etapem — świadomie nie obiecuję tu pełnej funkcji CAD.</p>
+<p><strong>Stan na start prac:</strong> w UI jest już miejsce na zakładkę (szkielet nawigacji i panelu). Narzędzia edycji i logika backendu są kolejnym etapem — świadomie nie obiecuję tu pełnej funkcji CAD. Zrzutu ekranu na tym etapie nie publikuję — funkcja jest w budowie.</p>
 <hr />
-<p><img alt="Architektura" src="../../Talk_electronics/img/screenshot_04.png" />
-<em>Zakładka modelu OCR i korekcji</em></p>
 <h2 id="stos-technologiczny">🧰 Stos technologiczny</h2>
 <p>Stack został dobrany pod realne wymagania produktu CV/AI: przetwarzanie dokumentów, obsługę nietypowych danych wejściowych, iteracyjny rozwój modeli oraz możliwość przyszłego wdrożenia produkcyjnego.</p>
 <h3 id="backend">🖥️ Backend</h3>

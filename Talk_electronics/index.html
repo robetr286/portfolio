@@ -461,6 +461,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ignored-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignored regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#netlist-generation-and-spice-export" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -777,8 +788,8 @@
 <li>Lazy GPU loading — VRAM allocated only on first use</li>
 <li>Multiple sources: PDF page, image file, data-URL</li>
 </ul>
-<p><img alt="Symbol detection" src="img/screenshot_02_en.png" />
-<em>Retouch tools palette</em></p>
+<p><img alt="Symbol detection" src="img/screenshot_05_en.png" />
+<em>Symbol detection — class boxes with confidence (RT-DETR)</em></p>
 <h3 id="ocr-reading-text-from-schematics">OCR — reading text from schematics</h3>
 <p>The OCR module, based on <strong>PaddleOCR PP-OCRv4</strong>, reads schematic text with pixel-level boxes and is the key step from image to structured data:</p>
 <ul>
@@ -787,8 +798,8 @@
 <li><strong>Post-processing</strong> — multi-stage token cleanup: OCR correction (1O0K→100K), merging vertical fragments, noise removal, fixing semiconductor marks (2SCI740→2SC1740)</li>
 <li><strong>Clickable bounding boxes</strong> — every recognized string is interactive on the canvas</li>
 </ul>
-<p><img alt="Object detection" src="img/screenshot_05_en.png" />
-<em>Object detection</em></p>
+<p><img alt="OCR" src="img/screenshot_04_en.png" />
+<em>OCR tab — recognized strings and correction</em></p>
 <h3 id="advanced-graphics-editor">Advanced graphics editor</h3>
 <p>An image-preparation module built for real schematics: damaged, skewed, noisy, or photographed in difficult conditions.</p>
 <ul>
@@ -799,8 +810,12 @@
 <li><strong>Retouch</strong> — denoise, morphological filters, median, blur cleanup</li>
 <li><strong>Undo/Redo</strong> — full operation history</li>
 </ul>
-<p><img alt="Schematic editing" src="img/screenshot_03_en.png" />
-<em>Ignored regions tab</em></p>
+<p><img alt="Schematic editing" src="img/screenshot_02_en.png" />
+<em>Retouch tools palette — manual scan cleanup before analysis</em></p>
+<h3 id="ignored-regions">Ignored regions</h3>
+<p>The <strong>Ignored regions</strong> tab lets the operator mark areas that detectors and OCR should skip — logos, frames, catalog text blocks, or graphic clutter. You draw rectangles / polygons (or use a brush), save the mask, then run symbol detection and text reading on a cleaner analysis field.</p>
+<p><img alt="Ignored regions" src="img/screenshot_03_en.png" />
+<em>Ignored regions tab — pink masks for areas skipped by the models</em></p>
 <h3 id="netlist-generation-and-spice-export">Netlist generation and SPICE export</h3>
 <p>From detected symbols and line segmentation the app builds a connectivity graph and produces a netlist for further analysis:</p>
 <ul>
@@ -821,10 +836,8 @@
 </ul>
 <h3 id="repair-rebuild-schematic-in-progress-started-october-2026">Repair / rebuild schematic <em>(in progress — started October 2026)</em></h3>
 <p>New app tab: <strong>Napraw / zbuduj schemat</strong> (<em>Repair / rebuild schematic</em>). The product goal is to support schematics that are hard for full automation — unclear, damaged, or hand-drawn — so an operator can complete or rebuild the geometry layer before detection, OCR, and netlist.</p>
-<p><strong>Status at kickoff:</strong> the UI already has the tab slot (navigation + panel skeleton). Editing tools and backend logic are the next stage — this is not a claim of a full CAD editor yet.</p>
+<p><strong>Status at kickoff:</strong> the UI already has the tab slot (navigation + panel skeleton). Editing tools and backend logic are the next stage — this is not a claim of a full CAD editor yet. No screenshot here yet — the feature is still under construction.</p>
 <hr />
-<p><img alt="Architecture" src="img/screenshot_04_en.png" />
-<em>OCR model and correction tab</em></p>
 <h2 id="technology-stack">Technology stack</h2>
 <p>The stack was chosen for real CV/AI product needs: document processing, unusual input data, iterative model development, and a path to production deployment.</p>
 <h3 id="backend">Backend</h3>
