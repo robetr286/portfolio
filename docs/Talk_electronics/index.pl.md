@@ -29,8 +29,8 @@ Sercem aplikacji jest detektor oparty o **RT-DETR-L** (Real-Time Detection Trans
 - Lazy-loading GPU — pamięć alokowana dopiero przy pierwszym użyciu
 - Obsługa wielu źródeł: strona PDF, plik graficzny, data-URL
 
-![Detekcja symboli](img/screenshot_02.png)
-*Paleta narzędzi retuszu*
+![Detekcja symboli](img/screenshot_05.png)
+*Detekcja symboli — ramki klas z pewnością (RT-DETR)*
 
 ### 📝 OCR — odczyt tekstu ze schematów
 
@@ -41,10 +41,8 @@ Moduł OCR oparty o **PaddleOCR PP-OCRv4** odczytuje tekst ze schematu z precyzj
 - **Postprocessing** — wieloetapowy pipeline czyszczenia tokenów korekcja OCR (1O0K→100K), scalanie fragmentów pionowych, usuwanie szumu, naprawa oznaczeń półprzewodników (2SCI740→2SC1740)
 - **Klikalne bounding boxy** — każdy rozpoznany tekst jest interaktywny na Canvasie
 
-
-![Wykrywanie obiektów](img/screenshot_05.png)
-*Wykrywanie obiektów*
-
+![OCR](img/screenshot_04.png)
+*Zakładka OCR — odczytane napisy i korekcja*
 
 ### ✏️ Zaawansowany edytor graficzny
 
@@ -57,8 +55,15 @@ Kompleksowy moduł przygotowania obrazu zaprojektowany pod realne schematy: znis
 - **Retusz** — usuwanie szumu, filtry morfologiczne, medianowe, denoise
 - **Undo/Redo** — pełna historia operacji
 
-![Edycja schematu](img/screenshot_03.png)
-*Zakładka [Strefy ignorowane]*
+![Edycja schematu](img/screenshot_02.png)
+*Paleta narzędzi retuszu — ręczna poprawa skanu przed analizą*
+
+### 🚫 Strefy ignorowane
+
+Zakładka **Strefy ignorowane** pozwala oznaczyć na schemacie obszary, których detektory i OCR mają nie brać pod uwagę — np. logo, ramki, bloki tekstu katalogowego czy szum graficzny. Operator rysuje prostokąty / wielokąty (albo pędzlem), zapisuje maskę i dopiero potem uruchamia detekcję symboli oraz odczyt tekstu na „czystszym” polu analizy.
+
+![Strefy ignorowane](img/screenshot_03.png)
+*Zakładka Strefy ignorowane — różowe maski obszarów pomijanych przez modele*
 
 ### 🔗 Generowanie netlisty i eksport SPICE
 
@@ -87,12 +92,9 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla warstwy diag
 
 Nowa zakładka w nawigacji aplikacji: **Napraw / zbuduj schemat**. Cel produktowy to obsługa schematów trudnych do automatycznej analizy — nieczytelnych, uszkodzonych lub rysowanych ręcznie — tak, by operator mógł uzupełnić lub odbudować warstwę geometryczną przed dalszą detekcją, OCR i netlistą.
 
-**Stan na start prac:** w UI jest już miejsce na zakładkę (szkielet nawigacji i panelu). Narzędzia edycji i logika backendu są kolejnym etapem — świadomie nie obiecuję tu pełnej funkcji CAD.
+**Stan na start prac:** w UI jest już miejsce na zakładkę (szkielet nawigacji i panelu). Narzędzia edycji i logika backendu są kolejnym etapem — świadomie nie obiecuję tu pełnej funkcji CAD. Zrzutu ekranu na tym etapie nie publikuję — funkcja jest w budowie.
 
 ---
-
-![Architektura](img/screenshot_04.png)
-*Zakładka modelu OCR i korekcji*
 
 ## 🧰 Stos technologiczny
 

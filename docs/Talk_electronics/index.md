@@ -29,8 +29,8 @@ At the core is an **RT-DETR-L** (Real-Time Detection Transformer) detector that 
 - Lazy GPU loading — VRAM allocated only on first use
 - Multiple sources: PDF page, image file, data-URL
 
-![Symbol detection](img/screenshot_02_en.png)
-*Retouch tools palette*
+![Symbol detection](img/screenshot_05_en.png)
+*Symbol detection — class boxes with confidence (RT-DETR)*
 
 ### OCR — reading text from schematics
 
@@ -41,10 +41,8 @@ The OCR module, based on **PaddleOCR PP-OCRv4**, reads schematic text with pixel
 - **Post-processing** — multi-stage token cleanup: OCR correction (1O0K→100K), merging vertical fragments, noise removal, fixing semiconductor marks (2SCI740→2SC1740)
 - **Clickable bounding boxes** — every recognized string is interactive on the canvas
 
-
-![Object detection](img/screenshot_05_en.png)
-*Object detection*
-
+![OCR](img/screenshot_04_en.png)
+*OCR tab — recognized strings and correction*
 
 ### Advanced graphics editor
 
@@ -57,8 +55,15 @@ An image-preparation module built for real schematics: damaged, skewed, noisy, o
 - **Retouch** — denoise, morphological filters, median, blur cleanup
 - **Undo/Redo** — full operation history
 
-![Schematic editing](img/screenshot_03_en.png)
-*Ignored regions tab*
+![Schematic editing](img/screenshot_02_en.png)
+*Retouch tools palette — manual scan cleanup before analysis*
+
+### Ignored regions
+
+The **Ignored regions** tab lets the operator mark areas that detectors and OCR should skip — logos, frames, catalog text blocks, or graphic clutter. You draw rectangles / polygons (or use a brush), save the mask, then run symbol detection and text reading on a cleaner analysis field.
+
+![Ignored regions](img/screenshot_03_en.png)
+*Ignored regions tab — pink masks for areas skipped by the models*
 
 ### Netlist generation and SPICE export
 
@@ -87,12 +92,9 @@ The chat module uses the generated netlist as context for an AI diagnostic layer
 
 New app tab: **Napraw / zbuduj schemat** (*Repair / rebuild schematic*). The product goal is to support schematics that are hard for full automation — unclear, damaged, or hand-drawn — so an operator can complete or rebuild the geometry layer before detection, OCR, and netlist.
 
-**Status at kickoff:** the UI already has the tab slot (navigation + panel skeleton). Editing tools and backend logic are the next stage — this is not a claim of a full CAD editor yet.
+**Status at kickoff:** the UI already has the tab slot (navigation + panel skeleton). Editing tools and backend logic are the next stage — this is not a claim of a full CAD editor yet. No screenshot here yet — the feature is still under construction.
 
 ---
-
-![Architecture](img/screenshot_04_en.png)
-*OCR model and correction tab*
 
 ## Technology stack
 
