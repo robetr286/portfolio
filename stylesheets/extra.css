@@ -1,5 +1,13 @@
 /* ===== Portfolio – custom theme (light) ===== */
 
+/* ---------- Project page: last-updated stamp (top of Talk Electronics / Protokolant / Lektorium) ---------- */
+.page-updated {
+  text-align: center;
+  font-size: 0.92em;
+  color: #888;
+  margin: 0.35rem 0 0.85rem;
+}
+
 /* ---------- Header: microchip + „Robert Bąk - portfolio” (bez „Strona główna”) ---------- */
 .md-header__button.md-logo {
   display: inline-flex;
