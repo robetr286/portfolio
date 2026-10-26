@@ -1,0 +1,14 @@
+{#- Always-visible PL / EN buttons in the header (between title and search) -#}
+<div class="md-header__option header-lang">
+  <nav class="header-lang__nav" aria-label="Language / Język">
+    {% for alt in config.extra.alternate %}
+      {% set is_active = (alt.lang == config.theme.language) %}
+      <a
+        href="{{ alt.link | url }}"
+        hreflang="{{ alt.lang }}"
+        class="header-lang__btn{% if is_active %} header-lang__btn--active{% endif %}"
+        {% if is_active %}aria-current="true"{% endif %}
+      >{{ alt.name }}</a>
+    {% endfor %}
+  </nav>
+</div>

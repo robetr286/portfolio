@@ -4,69 +4,69 @@ hide:
   - navigation
 ---
 
-<div class="lang-switcher lang-switcher--hero" markdown>
-
-[**PL - wersja**](pl/){ .lang-btn }
-[**EN - version**](.){ .lang-btn .lang-btn--active }
-
-</div>
-
-<div class="hero-banner" markdown>
-
-<img src="assets/hero-electronics-portfolio.svg" alt="" class="hero-bg-illustration" />
-
-<div class="hero-content" markdown>
-
-# :fontawesome-solid-microchip:{ .hero-icon } Robert Bąk
-
-<div class="hero-circuit"></div>
-
-</div>
-
-</div>
-
 <div class="project-grid" markdown>
 
-<div class="project-card" markdown>
+<div class="project-card project-card--talk" markdown>
+
+<img src="assets/cards/card-talk-electronics.jpg" alt="Talk Electronics — schematic, PCB, multimeter, oscilloscope" class="project-card-visual" />
 
 ### :fontawesome-solid-bolt: Talk Electronics
 
-**Automatic analysis of electronic schematics**
+<div class="project-card-mid" markdown>
 
-A Flask web app that uses AI models (RT-DETR, PaddleOCR) to recognize component
-symbols, build netlists, and support circuit diagnostics from uploaded PDF/PNG files.
+**Electronic schematic analysis in the browser**
+
+Web app: extract symbols from PDF/PNG schematics, build a netlist, and support diagnostics and repair.
+
+</div>
 
 [:octicons-arrow-right-24: View project](Talk_electronics/index.md){ .md-button .md-button--primary }
 
+<p class="project-card-goal">[Goal - help with repairs]</p>
+
 </div>
 
-<div class="project-card" markdown>
+<div class="project-card project-card--protokolant" markdown>
+
+<img src="assets/cards/card-protokolant.jpg" alt="Protokolant — long table, 6 people, whiteboard and online call" class="project-card-visual" />
 
 ### :fontawesome-solid-microphone: Protokolant
 
-**Local meeting notes — recording to text on your PC**
+<div class="project-card-mid" markdown>
 
-Desktop app: record a call, turn speech into text, get a short protocol. Audio stays on your machine — no cloud transcription service. Full write-up is Polish-first for now.
+**Recording → text → protocol on your PC**
+
+Desktop app: record a meeting, transcribe, and produce a short summary.
+
+</div>
 
 [:octicons-arrow-right-24: Polish page](Protokolant/index.md){ .md-button .md-button--primary }
 
+<p class="project-card-goal">[Goal - help with meetings]</p>
+
 </div>
 
-<div class="project-card" markdown>
+<div class="project-card project-card--lektorium" markdown>
+
+<img src="assets/cards/card-lektorium.jpg" alt="Lektorium — Polish captions and lector for lessons" class="project-card-visual" />
 
 ### :fontawesome-solid-book-open: Lektorium
 
-**Polish lesson voice and captions — local app**
+<div class="project-card-mid" markdown>
 
-Turns an English lesson you have rights to into Polish captions or a lector voice, on your computer. Full write-up is Polish-first for now.
+**EN lesson → Polish captions or lector**
+
+Desktop app: translates and generates Polish captions or a lector voice for a lesson.
+
+</div>
 
 [:octicons-arrow-right-24: Polish page](Lektorium/index.md){ .md-button .md-button--primary }
 
-</div>
+<p class="project-card-goal">[Goal - help with learning]</p>
 
 </div>
 
----
+</div>
 
 <div class="home-footer" markdown>
 

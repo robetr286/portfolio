@@ -4,68 +4,69 @@ hide:
   - navigation
 ---
 
-<div class="lang-switcher lang-switcher--hero" markdown>
-
-[**PL - wersja**](.){ .lang-btn .lang-btn--active }
-[**EN - version**](../){ .lang-btn }
-
-</div>
-
-<div class="hero-banner" markdown>
-
-<img src="assets/hero-electronics-portfolio.svg" alt="" class="hero-bg-illustration" />
-
-<div class="hero-content" markdown>
-
-# :fontawesome-solid-microchip:{ .hero-icon } Robert Bąk
-
-<div class="hero-circuit"></div>
-
-</div>
-
-</div>
-
 <div class="project-grid" markdown>
 
-<div class="project-card" markdown>
+<div class="project-card project-card--talk" markdown>
+
+<img src="../assets/cards/card-talk-electronics.jpg" alt="Talk Electronics — schemat, PCB, multimetr, oscyloskop" class="project-card-visual" />
 
 ### :fontawesome-solid-bolt: Talk Electronics
 
-**Automatyczna analiza schematów elektronicznych**
+<div class="project-card-mid" markdown>
 
-Aplikacja webowa, która z PDF/PNG schematu wyciąga symbole, buduje netlistę i wspiera diagnostykę obwodów.
+**Analiza schematów elektronicznych w przeglądarce**
+
+Aplikacja webowa: z PDF/PNG schematu wyciąga symbole, buduje netlistę i wspiera diagnostykę i naprawę.
+
+</div>
 
 [:octicons-arrow-right-24: Zobacz projekt](Talk_electronics/index.md){ .md-button .md-button--primary }
 
+<p class="project-card-goal">[Cel - pomóc w naprawie]</p>
+
 </div>
 
-<div class="project-card" markdown>
+<div class="project-card project-card--protokolant" markdown>
+
+<img src="../assets/cards/card-protokolant.jpg" alt="Protokolant — długi stół, 6 osób, tablica i rozmowa online" class="project-card-visual" />
 
 ### :fontawesome-solid-microphone: Protokolant
 
-**Lokalne nagranie → tekst → protokół ze spotkania**
+<div class="project-card-mid" markdown>
 
-Aplikacja na komputer: nagrywa rozmowę, zamienia mowę na tekst i robi krótkie podsumowanie. Audio i treść zostają u Ciebie — nic nie idzie do chmury jako usługa transkrypcji.
+**Nagranie → tekst → protokół na Twoim PC**
+
+Lokalna aplikacja na komputer: nagrywa spotkanie, robi transkrypcję i krótkie streszczenie.
+
+</div>
 
 [:octicons-arrow-right-24: Zobacz projekt](Protokolant/index.md){ .md-button .md-button--primary }
 
+<p class="project-card-goal">[Cel - pomóc w spotkaniach]</p>
+
 </div>
 
-<div class="project-card" markdown>
+<div class="project-card project-card--lektorium" markdown>
+
+<img src="../assets/cards/card-lektorium.jpg" alt="Lektorium — napisy polskie i lektor do lekcji" class="project-card-visual" />
 
 ### :fontawesome-solid-book-open: Lektorium
 
-**Angielska lekcja po polsku — napisy albo lektor**
+<div class="project-card-mid" markdown>
 
-Aplikacja na Twoim komputerze: wgrywasz lekcję, do której masz prawa, dostajesz polskie napisy i możesz odsłuchać je lektorem.
+**Lekcja EN → polskie napisy lub lektor**
+
+Aplikacja na komputer: tłumaczy i generuje napisy polskie lub lektora do lekcji.
+
+</div>
 
 [:octicons-arrow-right-24: Zobacz projekt](Lektorium/index.md){ .md-button .md-button--primary }
 
-</div>
+<p class="project-card-goal">[Cel - pomóc w nauce]</p>
 
 </div>
 
----
+</div>
 
 <div class="home-footer" markdown>
 

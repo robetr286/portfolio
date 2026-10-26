@@ -3,12 +3,6 @@ hide:
   - toc
 ---
 
-<div class="lang-switcher" markdown>
-
-[**PL - wersja**](.){ .lang-btn .lang-btn--active }
-
-</div>
-
 # Lektorium
 
 <p style="text-align: center; font-size: 1.15em; color: #555;">
