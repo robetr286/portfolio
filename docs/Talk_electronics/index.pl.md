@@ -5,6 +5,8 @@
 <em>Od skanu schematu do diagnostyki i netlisty — end-to-end produkt AI dla elektroniki</em>
 </p>
 
+<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 26.10.2026</p>
+
 ---
 
 ## Czym jest Talk Electronics?

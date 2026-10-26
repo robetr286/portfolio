@@ -9,6 +9,8 @@ hide:
 <em>Lokalna aplikacja do nagrywania spotkań, zamiany mowy na tekst i krótkich protokołów — bez wysyłania audio do chmury.</em>
 </p>
 
+<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 26.10.2026</p>
+
 ---
 
 ## Po co powstał

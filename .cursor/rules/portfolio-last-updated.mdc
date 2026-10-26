@@ -1,0 +1,34 @@
+---
+description: Przy każdej zmianie strony projektu w portfolio ustaw bieżącą datę „Ostatnia aktualizacja”.
+globs: docs/{Talk_electronics,Protokolant,Lektorium}/index*.md
+alwaysApply: false
+---
+
+# Portfolio — data ostatniej aktualizacji
+
+## Gdzie
+
+Na stronach głównych trzech projektów (PL i EN):
+
+- `docs/Talk_electronics/index.md` / `index.pl.md`
+- `docs/Protokolant/index.md` / `index.pl.md`
+- `docs/Lektorium/index.md` / `index.pl.md`
+
+## Obowiązek przy każdej edycji treści / zrzutów / layoutu tej strony
+
+1. Ustaw **bieżącą datę kalendarzową** w znaczniku u góry strony (tuż pod leadem / tytułem).
+2. Format daty: **`DD.MM.YYYY`** (np. `26.10.2026`).
+3. Tekst:
+   - PL: `<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> DD.MM.YYYY</p>`
+   - EN: `<p class="page-updated"><strong>Last updated:</strong> DD.MM.YYYY</p>`
+4. Aktualizuj **obie** wersje językowe tej samej strony projektu, jeśli obie istnieją.
+5. Styl: klasa CSS `page-updated` w `docs/stylesheets/extra.css` — nie usuwaj jej.
+
+## Kiedy nie zmieniać daty
+
+- Czysty refactor bez zmiany treści widocznej dla czytelnika (np. tylko whitespace w niepowiązanym pliku).
+- Zmiana wyłącznie w innym projekcie — nie ruszaj daty na stronach, których nie edytujesz.
+
+## Deploy
+
+Po zmianie treści strony: commit + `mkdocs gh-deploy` (env conda `new_job`) gdy PM prosi o publikację; data na żywej stronie musi zgadzać się z dniem deployu treści.

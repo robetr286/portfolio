@@ -9,6 +9,8 @@ hide:
 <em>Lokalna aplikacja, która z angielskiej lekcji online robi polskie napisy albo głos lektora.</em>
 </p>
 
+<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 26.10.2026</p>
+
 ---
 
 ## Po co powstał

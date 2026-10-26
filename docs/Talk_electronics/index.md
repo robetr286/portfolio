@@ -5,6 +5,8 @@
 <em>From schematic scan to diagnostics and netlist — an end-to-end AI product for electronics</em>
 </p>
 
+<p class="page-updated"><strong>Last updated:</strong> 26.10.2026</p>
+
 ---
 
 ## What is Talk Electronics?
