@@ -83,6 +83,12 @@ The chat module uses the generated netlist as context for an AI diagnostic layer
 - Step-by-step repair guidance
 - Isolating problem sections of the schematic
 
+### Repair / rebuild schematic *(in progress — started October 2026)*
+
+New app tab: **Napraw / zbuduj schemat** (*Repair / rebuild schematic*). The product goal is to support schematics that are hard for full automation — unclear, damaged, or hand-drawn — so an operator can complete or rebuild the geometry layer before detection, OCR, and netlist.
+
+**Status at kickoff:** the UI already has the tab slot (navigation + panel skeleton). Editing tools and backend logic are the next stage — this is not a claim of a full CAD editor yet.
+
 ---
 
 ![Architecture](img/screenshot_04_en.png)
@@ -177,6 +183,7 @@ Talk Electronics aims to become a **complete tool for electronics analysis and d
 |---|---|---|
 | **Phase I** | Full OCR + RT-DETR + netlist integration | ✅ Done (August 2026) |
 | **Phase II** | Beta pipeline: Image → detection → OCR → netlist → AI chat | ✅ Done locally (September 2026) |
+| **In progress** | Tab **Napraw / zbuduj schemat** (*Repair / rebuild schematic*) — UI skeleton; graph repair/build tools after models | Started October 2026 |
 | **Phase III** | Production deploy on DigitalOcean + hard-schematic testing | June 2027 |
 
 ### Longer-term vision
@@ -226,5 +233,5 @@ The project shows practical use of AI tools in development: faster iterations wi
 ---
 
 <p style="text-align: center; color: #888; font-size: 0.9em;">
-Portfolio site · Robert Bąk · September 2026
+Portfolio site · Robert Bąk · October 2026
 </p>

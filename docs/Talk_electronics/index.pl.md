@@ -83,6 +83,12 @@ Moduł czatu wykorzystuje wygenerowaną netlistę jako kontekst dla warstwy diag
 - Krok po kroku przez proces naprawy
 - Izolacja problemowych sekcji schematu
 
+### 🛠️ Napraw / zbuduj schemat *(w budowie — start: październik 2026)*
+
+Nowa zakładka w nawigacji aplikacji: **Napraw / zbuduj schemat**. Cel produktowy to obsługa schematów trudnych do automatycznej analizy — nieczytelnych, uszkodzonych lub rysowanych ręcznie — tak, by operator mógł uzupełnić lub odbudować warstwę geometryczną przed dalszą detekcją, OCR i netlistą.
+
+**Stan na start prac:** w UI jest już miejsce na zakładkę (szkielet nawigacji i panelu). Narzędzia edycji i logika backendu są kolejnym etapem — świadomie nie obiecuję tu pełnej funkcji CAD.
+
 ---
 
 ![Architektura](img/screenshot_04.png)
@@ -177,6 +183,7 @@ Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i dia
 |---|---|---|
 | **Faza I** | Pełna integracja OCR + RT-DETR + netlista | ✅ Osiągnięte (sierpień 2026) |
 | **Faza II** | Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI | ✅ Osiągnięte lokalnie (wrzesień 2026) |
+| **W toku** | Zakładka **Napraw / zbuduj schemat** — szkielet UI; narzędzia naprawy/budowy grafu po modelach | Start: październik 2026 |
 | **Faza III** | Deploy produkcyjny na DigitalOcean + testy na trudnych schematach | Czerwiec 2027 |
 
 ### 🔭 Długofalowa wizja
@@ -226,5 +233,5 @@ Projekt pokazuje praktyczne wykorzystanie narzędzi AI w developmentcie: szybsze
 ---
 
 <p style="text-align: center; color: #888; font-size: 0.9em;">
-Strona portfolio · Robert Bąk · Marzec 2026
+Strona portfolio · Robert Bąk · Październik 2026
 </p>
