@@ -5,7 +5,7 @@
 <em>From schematic scan to diagnostics and netlist — an end-to-end AI product for electronics</em>
 </p>
 
-<p class="page-updated"><strong>Last updated:</strong> 26.10.2026</p>
+<p class="page-updated"><strong>Last updated:</strong> 10.11.2026</p>
 
 ---
 
@@ -146,6 +146,10 @@ The stack was chosen for real CV/AI product needs: document processing, unusual 
 | **GitHub Actions** | CI/CD with automated checks |
 | **Pre-commit hooks** | isort, flake8, YAML validation |
 
+### Architecture — Bounded Context & DDD (started November 2026)
+
+The app is a **modular monolith**: one Flask process, but the domain is split into **Bounded Contexts** (BC) using a light **Domain-Driven Design** (DDD) approach. Each context owns its vocabulary and public API (geometry of lines, ML junctions, electrical connectivity / netlist, OCR, symbols, training data, …). Cross-context private imports and “god modules” are treated as technical debt with an automated import-boundary test and a golden-master baseline on the kartoteka pages, so refactors must not silently change the graph or netlist. Goal: safer growth without changing user-facing URLs or JSON contracts.
+
 ### Infrastructure
 
 | Technology | Role |
@@ -188,6 +192,7 @@ Talk Electronics aims to become a **complete tool for electronics analysis and d
 | **Phase I** | Full OCR + RT-DETR + netlist integration | ✅ Done (August 2026) |
 | **Phase II** | Beta pipeline: Image → detection → OCR → netlist → AI chat | ✅ Done locally (September 2026) |
 | **In progress** | Tab **Napraw / zbuduj schemat** (*Repair / rebuild schematic*) — UI skeleton; graph repair/build tools after models | Started October 2026 |
+| **In progress** | Bounded Context / DDD modularization (safety net: golden master + import-boundary tests) | Started November 2026 |
 | **Phase III** | Production deploy on DigitalOcean + hard-schematic testing | June 2027 |
 
 ### Longer-term vision

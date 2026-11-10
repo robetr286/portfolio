@@ -5,7 +5,7 @@
 <em>Od skanu schematu do diagnostyki i netlisty — end-to-end produkt AI dla elektroniki</em>
 </p>
 
-<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 26.10.2026</p>
+<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 10.11.2026</p>
 
 ---
 
@@ -146,6 +146,10 @@ Stack został dobrany pod realne wymagania produktu CV/AI: przetwarzanie dokumen
 | **GitHub Actions** | CI/CD z automated checks |
 | **Pre-commit hooks** | isort, flake8, YAML validation |
 
+### 🧱 Architektura — Bounded Context i DDD (start: listopad 2026)
+
+Aplikacja to **modularny monolit**: jeden proces Flask, ale domena jest dzielona na **Bounded Contexts** (BC) w lekkim ujęciu **Domain-Driven Design** (DDD). Każdy kontekst ma własne słownictwo i publiczne API (geometria linii, węzły ML, połączenia elektryczne / netlista, OCR, symbole, dane treningowe…). Importy prywatne między kontekstami i „god-module” traktujemy jako dług techniczny: test granic importów + złoty wzorzec na stronach kartoteki pilnują, by refaktor nie zmieniał po cichu grafu ani netlisty. Cel: bezpieczny wzrost bez zmiany adresów URL ani kontraktów JSON dla użytkownika.
+
 ### 🏗️ Infrastruktura
 
 | Technologia | Zastosowanie |
@@ -188,6 +192,7 @@ Celem Talk Electronics jest stworzenie **kompletnego narzędzia do analizy i dia
 | **Faza I** | Pełna integracja OCR + RT-DETR + netlista | ✅ Osiągnięte (sierpień 2026) |
 | **Faza II** | Beta pipeline: Obraz → detekcja → OCR → netlista → chat AI | ✅ Osiągnięte lokalnie (wrzesień 2026) |
 | **W toku** | Zakładka **Napraw / zbuduj schemat** — szkielet UI; narzędzia naprawy/budowy grafu po modelach | Start: październik 2026 |
+| **W toku** | Podział na Bounded Context / DDD (siatka bezpieczeństwa: złoty wzorzec + test granic importów) | Start: listopad 2026 |
 | **Faza III** | Deploy produkcyjny na DigitalOcean + testy na trudnych schematach | Czerwiec 2027 |
 
 ### 🔭 Długofalowa wizja
