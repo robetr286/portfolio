@@ -101,6 +101,26 @@
   }
 }
 
+/* Phone: keep language pills + search inside the viewport (was ~45 px overflow). */
+@media screen and (max-width: 30em) {
+  .header-lang {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    padding: 0.1rem 0.2rem;
+  }
+
+  .header-lang__nav {
+    gap: 0.2rem;
+  }
+
+  .header-lang__btn {
+    min-width: 0;
+    padding: 0.28rem 0.35rem;
+    font-size: 0.62rem;
+    letter-spacing: 0;
+  }
+}
+
 /* ---------- Custom colours ---------- */
 :root {
   --md-primary-fg-color: #d4b24c;

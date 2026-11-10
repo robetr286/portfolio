@@ -577,6 +577,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#architektura-bounded-context-i-ddd-start-listopad-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 Architektura — Bounded Context i DDD (start: listopad 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#infrastruktura" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -772,7 +783,7 @@
 <em>Od skanu schematu do diagnostyki i netlisty — end-to-end produkt AI dla elektroniki</em>
 </p>
 
-<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 26.10.2026</p>
+<p class="page-updated"><strong>Ostatnia aktualizacja:</strong> 10.11.2026</p>
 
 <hr />
 <h2 id="czym-jest-talk-electronics">Czym jest Talk Electronics?</h2>
@@ -973,6 +984,8 @@
 </tr>
 </tbody>
 </table>
+<h3 id="architektura-bounded-context-i-ddd-start-listopad-2026">🧱 Architektura — Bounded Context i DDD (start: listopad 2026)</h3>
+<p>Aplikacja to <strong>modularny monolit</strong>: jeden proces Flask, ale domena jest dzielona na <strong>Bounded Contexts</strong> (BC) w lekkim ujęciu <strong>Domain-Driven Design</strong> (DDD). Każdy kontekst ma własne słownictwo i publiczne API (geometria linii, węzły ML, połączenia elektryczne / netlista, OCR, symbole, dane treningowe…). Importy prywatne między kontekstami i „god-module” traktujemy jako dług techniczny: test granic importów + złoty wzorzec na stronach kartoteki pilnują, by refaktor nie zmieniał po cichu grafu ani netlisty. Cel: bezpieczny wzrost bez zmiany adresów URL ani kontraktów JSON dla użytkownika.</p>
 <h3 id="infrastruktura">🏗️ Infrastruktura</h3>
 <table>
 <thead>
@@ -1044,6 +1057,11 @@
 <td><strong>W toku</strong></td>
 <td>Zakładka <strong>Napraw / zbuduj schemat</strong> — szkielet UI; narzędzia naprawy/budowy grafu po modelach</td>
 <td>Start: październik 2026</td>
+</tr>
+<tr>
+<td><strong>W toku</strong></td>
+<td>Podział na Bounded Context / DDD (siatka bezpieczeństwa: złoty wzorzec + test granic importów)</td>
+<td>Start: listopad 2026</td>
 </tr>
 <tr>
 <td><strong>Faza III</strong></td>

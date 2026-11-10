@@ -577,6 +577,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#architecture-bounded-context-ddd-started-november-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture — Bounded Context &amp; DDD (started November 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#infrastructure" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -772,7 +783,7 @@
 <em>From schematic scan to diagnostics and netlist — an end-to-end AI product for electronics</em>
 </p>
 
-<p class="page-updated"><strong>Last updated:</strong> 26.10.2026</p>
+<p class="page-updated"><strong>Last updated:</strong> 10.11.2026</p>
 
 <hr />
 <h2 id="what-is-talk-electronics">What is Talk Electronics?</h2>
@@ -973,6 +984,8 @@
 </tr>
 </tbody>
 </table>
+<h3 id="architecture-bounded-context-ddd-started-november-2026">Architecture — Bounded Context &amp; DDD (started November 2026)</h3>
+<p>The app is a <strong>modular monolith</strong>: one Flask process, but the domain is split into <strong>Bounded Contexts</strong> (BC) using a light <strong>Domain-Driven Design</strong> (DDD) approach. Each context owns its vocabulary and public API (geometry of lines, ML junctions, electrical connectivity / netlist, OCR, symbols, training data, …). Cross-context private imports and “god modules” are treated as technical debt with an automated import-boundary test and a golden-master baseline on the kartoteka pages, so refactors must not silently change the graph or netlist. Goal: safer growth without changing user-facing URLs or JSON contracts.</p>
 <h3 id="infrastructure">Infrastructure</h3>
 <table>
 <thead>
@@ -1044,6 +1057,11 @@
 <td><strong>In progress</strong></td>
 <td>Tab <strong>Napraw / zbuduj schemat</strong> (<em>Repair / rebuild schematic</em>) — UI skeleton; graph repair/build tools after models</td>
 <td>Started October 2026</td>
+</tr>
+<tr>
+<td><strong>In progress</strong></td>
+<td>Bounded Context / DDD modularization (safety net: golden master + import-boundary tests)</td>
+<td>Started November 2026</td>
 </tr>
 <tr>
 <td><strong>Phase III</strong></td>
